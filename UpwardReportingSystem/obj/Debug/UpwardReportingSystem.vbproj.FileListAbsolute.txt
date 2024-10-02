@@ -1,0 +1,13 @@
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\bin\Debug\UpwardReportingSystem.exe.config
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\bin\Debug\UpwardReportingSystem.exe
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\bin\Debug\UpwardReportingSystem.pdb
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\bin\Debug\UpwardReportingSystem.xml
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.Form1.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.Resources.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.vbproj.GenerateResource.Cache
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.exe
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.xml
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.pdb
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.vbprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\bin\Debug\Newtonsoft.Json.xml
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.Modal.resources
