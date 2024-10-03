@@ -10,4 +10,6 @@ C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\De
 C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.pdb
 C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.vbprojResolveAssemblyReference.cache
 C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\bin\Debug\Newtonsoft.Json.xml
-C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.Modal.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmScheduleAccount.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmSearch.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmModal.resources

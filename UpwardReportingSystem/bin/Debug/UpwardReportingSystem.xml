@@ -6,27 +6,39 @@ UpwardReportingSystem
 </name>
 </assembly>
 <members>
-<member name="T:UpwardReportingSystem.DataSet1.usersDataTable">
+<member name="T:UpwardReportingSystem.DataSet1.ScheduleDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:UpwardReportingSystem.DataSet1.sampleTableDataTable">
+</member><member name="T:UpwardReportingSystem.DataSet1.Schedule_IDDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:UpwardReportingSystem.DataSet1.usersRow">
+</member><member name="T:UpwardReportingSystem.DataSet1.Schedule_ConDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.ScheduleRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:UpwardReportingSystem.DataSet1.sampleTableRow">
+</member><member name="T:UpwardReportingSystem.DataSet1.Schedule_IDRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:UpwardReportingSystem.DataSet1.usersRowChangeEvent">
+</member><member name="T:UpwardReportingSystem.DataSet1.Schedule_ConRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.ScheduleRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:UpwardReportingSystem.DataSet1.sampleTableRowChangeEvent">
+</member><member name="T:UpwardReportingSystem.DataSet1.Schedule_IDRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.Schedule_ConRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>

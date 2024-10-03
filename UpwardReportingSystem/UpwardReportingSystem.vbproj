@@ -88,6 +88,39 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="bin\Debug\DataSet1.vb">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\frmScheduleAccount.Designer.vb">
+      <DependentUpon>frmScheduleAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\frmScheduleAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\frmSearch.Designer.vb">
+      <DependentUpon>frmSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\frmSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptSchedule_Cont1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSchedule_Cont1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptSchedule_IDNo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSchedule_IDNo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptSchedule_Sub.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSchedule_Sub.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="bin\Debug\sample.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,10 +133,10 @@
       <DependentUpon>userReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="bin\Modal.Designer.vb">
-      <DependentUpon>Modal.vb</DependentUpon>
+    <Compile Include="bin\Debug\frmModal.Designer.vb">
+      <DependentUpon>frmModal.vb</DependentUpon>
     </Compile>
-    <Compile Include="bin\Modal.vb">
+    <Compile Include="bin\Debug\frmModal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.vb">
@@ -130,6 +163,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="bin\Debug\frmScheduleAccount.resx">
+      <DependentUpon>frmScheduleAccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\frmSearch.resx">
+      <DependentUpon>frmSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptSchedule_Cont1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSchedule_Cont1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptSchedule_IDNo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSchedule_IDNo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptSchedule_Sub.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSchedule_Sub.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\sample.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>sample.vb</LastGenOutput>
@@ -138,8 +189,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>userReport.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="bin\Modal.resx">
-      <DependentUpon>Modal.vb</DependentUpon>
+    <EmbeddedResource Include="bin\Debug\frmModal.resx">
+      <DependentUpon>frmModal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>

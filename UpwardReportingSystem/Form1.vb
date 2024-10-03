@@ -75,21 +75,7 @@ Public Class Form1
         End Try
     End Function
 
-
-
-    Public Sub GetReportApi(url As String, callback As CallbackDelegate)
-        Dim _url As String = __URL & "/api" & url
-
-
-
-        ' Create a request to the API
-        Dim request As HttpWebRequest = DirectCast(WebRequest.Create(_url), HttpWebRequest)
-        request.Method = "GET"
-
-
-        request.ContentType = "application/json"
-        request.Headers("Authorization") = "Bearer " & ACCESS_TOKEN
-
+    Sub addCokie(request As HttpWebRequest)
         Dim cookieContainer As New CookieContainer()
         Dim cookie1 As New Cookie("up-ac-login", up_ac_login) With {
             .Domain = __CURL
@@ -115,6 +101,21 @@ Public Class Form1
         cookieContainer.Add(cookie5)
 
         request.CookieContainer = cookieContainer
+    End Sub
+
+
+    Public Sub GetReportApi(url As String, callback As CallbackDelegate)
+        Dim _url As String = __URL & "/api" & url
+
+        ' Create a request to the API
+        Dim request As HttpWebRequest = DirectCast(WebRequest.Create(_url), HttpWebRequest)
+        request.Method = "GET"
+
+
+        request.ContentType = "application/json"
+        request.Headers("Authorization") = "Bearer " & ACCESS_TOKEN
+        addCokie(request)
+
 
         ' Get the response from the API
         Dim jsonResponse As String
@@ -140,7 +141,7 @@ Public Class Form1
 
 
 
-    Public Sub PostReportApi(url As String, postData As Dictionary(Of String, Object), dtb As DataTable, callback As CallbackDelegate)
+    Public Sub PostReportApi(url As String, postData As Dictionary(Of String, String), callback As CallbackDelegate)
         Dim _url As String = __URL & "/api" & url
 
         ' Serialize the data object to JSON
@@ -187,6 +188,42 @@ Public Class Form1
         End If
     End Sub
 
+    Public Sub GetReportTableApi(url As String, callback As CallbackDelegate)
+        Dim _url As String = __URL & "/api" & url
+
+
+        ' Create a request to the API
+        Dim request As HttpWebRequest = DirectCast(WebRequest.Create(_url), HttpWebRequest)
+        request.Method = "GET"
+
+        request.ContentType = "application/json"
+        request.Headers("Authorization") = "Bearer " & ACCESS_TOKEN
+        addCokie(request)
+
+
+        ' Get the response from the API
+        Dim jsonResponse As String
+        Using response As HttpWebResponse = DirectCast(request.GetResponse(), HttpWebResponse)
+            Using reader As New StreamReader(response.GetResponseStream())
+                jsonResponse = reader.ReadToEnd()
+            End Using
+        End Using
+
+        ' Deserialize the JSON response to a JObject
+        Dim jsonObject As JObject = JObject.Parse(jsonResponse)
+
+        ' Extract the "data" field as a JArray (adjust the key name based on your API response)
+        Dim dataArray As JArray = jsonObject("data")
+
+        ' Deserialize the JArray to a DataTable
+        Dim dtbs As DataTable = JsonConvert.DeserializeObject(Of DataTable)(dataArray.ToString())
+
+        If callback IsNot Nothing Then
+            callback(dtbs)
+        End If
+    End Sub
+
+
     Public Delegate Sub CallbackDelegate(data As DataTable)
 
 
@@ -196,9 +233,6 @@ Public Class Form1
         Me.WindowState = FormWindowState.Maximized
         CrystalReportViewer1.ToolPanelView = False
         Button1.FlatAppearance.BorderSize = 0
-
-
-       
 
 
         Dim url As String = ""
@@ -261,16 +295,18 @@ Public Class Form1
         GetReportApi("/reports/reports/users", AddressOf ResponseSubAccount)
     End Sub
 
- 
+
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Dim formodal As New Form1
 
         Try
-            Dim modal As New Modal
-            modal.StartPosition = FormStartPosition.CenterParent
-            modal.FormBorderStyle = Windows.Forms.FormBorderStyle.None
-            modal.Owner = formodal
-            modal.ShowDialog()
+            Dim modal As New frmModal
+
+        
+
+            Modal.StartPosition = FormStartPosition.CenterParent
+            Modal.Owner = formodal
+            Modal.ShowDialog()
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -298,5 +334,5 @@ Public Class Form1
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-   
+
 End Class
