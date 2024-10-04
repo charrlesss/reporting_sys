@@ -33,7 +33,6 @@ Partial Class frmScheduleAccount
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbReport = New System.Windows.Forms.ComboBox()
-        Me.txtReportTitle = New System.Windows.Forms.RichTextBox()
         Me.txtAccountName = New System.Windows.Forms.TextBox()
         Me.txtAccount = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -41,6 +40,7 @@ Partial Class frmScheduleAccount
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.txtSubsi = New System.Windows.Forms.TextBox()
         Me.cmbInsurance = New System.Windows.Forms.ComboBox()
+        Me.txtReportTitle = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'cmbOrder
@@ -133,14 +133,6 @@ Partial Class frmScheduleAccount
         Me.cmbReport.Size = New System.Drawing.Size(336, 21)
         Me.cmbReport.TabIndex = 21
         '
-        'txtReportTitle
-        '
-        Me.txtReportTitle.Location = New System.Drawing.Point(11, 7)
-        Me.txtReportTitle.Name = "txtReportTitle"
-        Me.txtReportTitle.Size = New System.Drawing.Size(407, 96)
-        Me.txtReportTitle.TabIndex = 20
-        Me.txtReportTitle.Text = ""
-        '
         'txtAccountName
         '
         Me.txtAccountName.Location = New System.Drawing.Point(82, 167)
@@ -213,11 +205,22 @@ Partial Class frmScheduleAccount
         Me.cmbInsurance.TabIndex = 59
         Me.cmbInsurance.Visible = False
         '
+        'txtReportTitle
+        '
+        Me.txtReportTitle.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtReportTitle.Location = New System.Drawing.Point(16, 12)
+        Me.txtReportTitle.Multiline = True
+        Me.txtReportTitle.Name = "txtReportTitle"
+        Me.txtReportTitle.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtReportTitle.Size = New System.Drawing.Size(407, 96)
+        Me.txtReportTitle.TabIndex = 60
+        '
         'frmScheduleAccount
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(432, 405)
+        Me.Controls.Add(Me.txtReportTitle)
         Me.Controls.Add(Me.cmbInsurance)
         Me.Controls.Add(Me.txtSubsi)
         Me.Controls.Add(Me.btnSearch)
@@ -233,7 +236,6 @@ Partial Class frmScheduleAccount
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cmbReport)
-        Me.Controls.Add(Me.txtReportTitle)
         Me.Controls.Add(Me.txtAccountName)
         Me.Controls.Add(Me.txtAccount)
         Me.Name = "frmScheduleAccount"
@@ -252,7 +254,6 @@ Partial Class frmScheduleAccount
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents cmbReport As System.Windows.Forms.ComboBox
-    Friend WithEvents txtReportTitle As System.Windows.Forms.RichTextBox
     Friend WithEvents txtAccountName As System.Windows.Forms.TextBox
     Friend WithEvents txtAccount As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
@@ -260,4 +261,5 @@ Partial Class frmScheduleAccount
     Friend WithEvents btnSearch As System.Windows.Forms.Button
     Friend WithEvents txtSubsi As System.Windows.Forms.TextBox
     Friend WithEvents cmbInsurance As System.Windows.Forms.ComboBox
+    Friend WithEvents txtReportTitle As System.Windows.Forms.TextBox
 End Class

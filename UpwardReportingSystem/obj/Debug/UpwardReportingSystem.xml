@@ -18,6 +18,10 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.Generate_Subsidiary_LedgerDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:UpwardReportingSystem.DataSet1.ScheduleRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -30,6 +34,10 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.Generate_Subsidiary_LedgerRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:UpwardReportingSystem.DataSet1.ScheduleRowChangeEvent">
 	<summary>
 Row event argument class
@@ -39,6 +47,10 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:UpwardReportingSystem.DataSet1.Schedule_ConRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.Generate_Subsidiary_LedgerRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>

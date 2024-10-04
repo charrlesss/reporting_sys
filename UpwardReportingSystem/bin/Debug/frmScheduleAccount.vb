@@ -1,4 +1,5 @@
 ﻿Public Class frmScheduleAccount
+  
 
     Private Sub ReportTitle()
         Select Case cmbReport.Text
@@ -118,7 +119,16 @@
     End Sub
 
 
-    Private Sub btnSchecSubmit_Click(sender As Object, e As EventArgs) Handles btnSchecSubmit.Click
+    Private Async Sub btnSchecSubmit_Click(sender As Object, e As EventArgs) Handles btnSchecSubmit.Click
+        If txtAccount.Text.Trim = "" And cmbReport.Text = "GL Account (Detailed)" Then
+            MsgBox("Provide account", MsgBoxStyle.Information)
+            Form1.HideLoading()
+
+            Exit Sub
+        End If
+
+        Form1.ShowLoading()
+        Await Task.Delay(100)
 
         Dim postData As New Dictionary(Of String, String) From {
            {"date", dtDate.Value},
@@ -133,16 +143,12 @@
         Form1.PostReportApi("/reports/accounting/schedule-account-report-desk", postData, AddressOf HandleApiResponse)
     End Sub
     Private Sub HandleApiResponse(dt As DataTable)
+        Form1.HideLoading()
         If (dt.Rows.Count <= 0) Then
             MsgBox("No Record Found!")
             Exit Sub
         End If
 
-
-        If txtAccount.Text.Trim = "" And cmbReport.Text = "GL Account(Detailed)" Then
-            MsgBox("Provide account", MsgBoxStyle.Information)
-            Exit Sub
-        End If
 
         If cmbSubsi.SelectedIndex = 0 Then
 
@@ -152,7 +158,17 @@
                     rpt.SetDataSource(dt)
                     rpt.SummaryInfo.ReportTitle = txtReportTitle.Text
                     Form1.CrystalReportViewer1.ReportSource = rpt
-                    Me.ParentForm.WindowState = FormWindowState.Minimized
+                    Me.ParentForm.Close()
+
+
+                Case 1 '"GL Account(Detailed)"
+                    Dim rpt As New rptSchedule_Sub
+                    rpt.SetDataSource(dt)
+                    rpt.SummaryInfo.ReportTitle = txtReportTitle.Text
+                    Form1.CrystalReportViewer1.ReportSource = rpt
+                    Me.ParentForm.Close()
+
+
             End Select
         ElseIf cmbSubsi.SelectedIndex = 1 Then
             If txtSubsi.Text.Trim.ToUpper <> "ALL" Then
@@ -163,7 +179,9 @@
                         rpt.SetDataSource(dt)
                         rpt.SummaryInfo.ReportTitle = txtReportTitle.Text
                         Form1.CrystalReportViewer1.ReportSource = rpt
-                        Me.ParentForm.WindowState = FormWindowState.Minimized
+                        Me.ParentForm.Close()
+
+
                     Case 1 '"All Accounts"
 
 
@@ -171,7 +189,9 @@
                         rpt.SetDataSource(dt)
                         rpt.SummaryInfo.ReportTitle = txtReportTitle.Text
                         Form1.CrystalReportViewer1.ReportSource = rpt
-                        Me.ParentForm.WindowState = FormWindowState.Minimized
+                        Me.ParentForm.Close()
+
+
                 End Select
             Else
                 Select Case cmbReport.SelectedIndex
@@ -180,13 +200,16 @@
                         rpt.SetDataSource(dt)
                         rpt.SummaryInfo.ReportTitle = txtReportTitle.Text
                         Form1.CrystalReportViewer1.ReportSource = rpt
-                        Me.ParentForm.WindowState = FormWindowState.Minimized
+                        Me.ParentForm.Close()
+
+
                     Case 1 '"All Accounts"
                         Dim rpt As New rptSchedule_Cont1
                         rpt.SetDataSource(dt)
                         rpt.SummaryInfo.ReportTitle = txtReportTitle.Text
                         Form1.CrystalReportViewer1.ReportSource = rpt
-                        Me.ParentForm.WindowState = FormWindowState.Minimized
+                        Me.ParentForm.Close()
+
                 End Select
             End If
         Else
@@ -194,10 +217,17 @@
             rpt.SetDataSource(dt)
             rpt.SummaryInfo.ReportTitle = txtReportTitle.Text
             Form1.CrystalReportViewer1.ReportSource = rpt
-            Me.ParentForm.WindowState = FormWindowState.Minimized
+            Me.ParentForm.Close()
 
         End If
 
     End Sub
 
+    Private Sub txtReportTitle_TextChanged(sender As Object, e As EventArgs) Handles txtReportTitle.TextChanged
+        ReportTitle()
+    End Sub
+
+    Private Sub dtDate_ValueChanged(sender As Object, e As EventArgs) Handles dtDate.ValueChanged
+        ReportTitle()
+    End Sub
 End Class

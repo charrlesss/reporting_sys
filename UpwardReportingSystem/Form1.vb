@@ -10,6 +10,8 @@ Imports CrystalDecisions.Shared
 
 
 Public Class Form1
+    Private loadingForm As frmLoading  ' Declare the loading form
+
     Dim __URL As String = "http://localhost:4400"
     Dim __CURL As String = "localhost"
 
@@ -26,6 +28,21 @@ Public Class Form1
 
 
 
+    Public Sub ShowLoading()
+        ' Ensure that the loading form is not already open
+        If loadingForm Is Nothing OrElse loadingForm.IsDisposed Then
+
+            loadingForm = New frmLoading()
+            loadingForm.Show()
+            loadingForm.BringToFront()  ' Bring it to the front to ensure visibility
+        End If
+    End Sub
+    Public Sub HideLoading()
+        If loadingForm IsNot Nothing AndAlso loadingForm.Visible Then
+            loadingForm.Close()
+        End If
+
+    End Sub
 
     Public Sub ResponseSubAccount(dt As DataTable)
         Try
@@ -289,24 +306,21 @@ Public Class Form1
         Console.WriteLine(up_at_login)
         Console.WriteLine(up_rt_login)
 
-    End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        GetReportApi("/reports/reports/users", AddressOf ResponseSubAccount)
+
     End Sub
 
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Dim formodal As New Form1
-
         Try
             Dim modal As New frmModal
 
-        
 
-            Modal.StartPosition = FormStartPosition.CenterParent
-            Modal.Owner = formodal
-            Modal.ShowDialog()
+
+            modal.StartPosition = FormStartPosition.CenterParent
+            modal.Owner = formodal
+            modal.ShowDialog()
 
         Catch ex As Exception
             MsgBox(ex.Message)

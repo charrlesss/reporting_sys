@@ -32,9 +32,9 @@
         FlowLayoutPanel1.WrapContents = False
 
         CreateButtons(FlowLayoutPanel1, buttonNames)
-
     End Sub
 
+   
 
     Private Sub CreateButtons(flowPanel As FlowLayoutPanel, buttonTexts As String())
         ' Loop through each string in the array
@@ -72,7 +72,7 @@
                 ShowFormInPanel(New frmScheduleAccount())
 
             Case "Subsidiary Ledger"
-
+                ShowFormInPanel(New frmSubsidiaryLedger())
             Case "Trial Balance"
 
 
@@ -138,11 +138,12 @@
     End Sub
 
     Private Sub ShowFormInPanel(childForm As Form)
+        Panel4.Controls.Clear()
+
         ' Set the child form properties to act like a control within panel4
         childForm.TopLevel = False
         childForm.FormBorderStyle = FormBorderStyle.None
         childForm.Dock = DockStyle.Fill ' Make the form fill the panel
-
         ' Add the child form to panel4's controls
         Panel4.Controls.Add(childForm)
 

@@ -103,6 +103,30 @@
     <Compile Include="bin\Debug\frmSearch.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="bin\Debug\frmLoading.Designer.vb">
+      <DependentUpon>frmLoading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\frmLoading.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\frmSubsidiaryLedger.Designer.vb">
+      <DependentUpon>frmSubsidiaryLedger.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\frmSubsidiaryLedger.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptCRLedger1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCRLedger1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptCRLedger2.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCRLedger2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="bin\Debug\rptSchedule_Cont1.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -168,6 +192,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\frmSearch.resx">
       <DependentUpon>frmSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\frmLoading.resx">
+      <DependentUpon>frmLoading.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\frmSubsidiaryLedger.resx">
+      <DependentUpon>frmSubsidiaryLedger.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptCRLedger1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCRLedger1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptCRLedger2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCRLedger2.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\rptSchedule_Cont1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
