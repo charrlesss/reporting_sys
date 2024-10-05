@@ -1,13 +1,20 @@
 ﻿Public Class frmSubsidiaryLedger
+    Dim Subsi As String = ""
+
+    Sub getCIDNoSubAccount(dt As DataTable)
+        If (dt.Rows.Count > 0) Then
+            If cmbSubsi.SelectedIndex = 1 Then
+                Subsi = "id no.: " & dt.Rows(0)(0).ToString() & " (" & txtSubsi.Text.Trim & ")"
+
+            ElseIf cmbSubsi.SelectedIndex = 2 Then
+                Subsi = "sub account: " & dt.Rows(0)(1).ToString() & " (" & txtSubsi.Text.Trim & ")"
+
+            End If
+        End If
+    End Sub
+
+
     Private Sub ReportTitle()
-        Dim Subsi As String = ""
-
-        'If cmbSubsi.SelectedIndex = 1 Then
-        'Subsi = "id no.: " & clsfunction.getdatainquery("cid_no", "[xid_entry]", "where id_no = '" & txtSubsi.Text.Trim & "'") & " (" & txtSubsi.Text.Trim & ")"
-        '  ElseIf cmbSubsi.SelectedIndex = 2 Then
-        '     Subsi = "sub account: " & clsfunction.getdatainquery("shortname", "subaccount", "where sub_acct = '" & txtSubsi.Text.Trim & "'") & "(" & txtSubsi.Text.Trim & ")"
-        ' End If
-
         txtReportTitle.Text = "UPWARD MANAGEMENT INSURANCE SERVICES " & vbCrLf & _
                               "Subsidiary Ledger" & vbCrLf & vbCrLf & _
                               "Account: " & txtAccountName.Text & " (" & txtAccount.Text & ")" & _
@@ -41,6 +48,12 @@
     End Sub
 
     Private Sub txtSubsi_TextChanged(sender As Object, e As EventArgs) Handles txtSubsi.TextChanged
+        If cmbSubsi.SelectedIndex = 1 Then
+            Form1.GetReportTableApi("/reports/accounting/subsidiary-ledger-report-get-cINo-Sub-desk?search=" & txtSubsi.Text.Trim, AddressOf getCIDNoSubAccount)
+
+        ElseIf cmbSubsi.SelectedIndex = 2 Then
+            Form1.GetReportTableApi("/reports/accounting/subsidiary-ledger-report-get-cINo-Sub-desk?search=" & txtSubsi.Text.Trim, AddressOf getCIDNoSubAccount)
+        End If
         ReportTitle()
     End Sub
 
@@ -75,7 +88,7 @@
 
 
 
-   
+
     Private Async Sub btnSchecSubmit_Click(sender As Object, e As EventArgs) Handles btnSchecSubmit.Click
         If txtAccount.Text.Trim = "" Then
             MsgBox("Provide account", MsgBoxStyle.Information)
@@ -120,5 +133,6 @@
             Me.ParentForm.Close()
         End If
     End Sub
+
 
 End Class

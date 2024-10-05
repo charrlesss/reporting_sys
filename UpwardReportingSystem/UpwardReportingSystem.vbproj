@@ -91,6 +91,24 @@
     <Compile Include="bin\Debug\DataSet1.vb">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="bin\Debug\frmBalanceSheetLong.Designer.vb">
+      <DependentUpon>frmBalanceSheetLong.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\frmBalanceSheetLong.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\frmGeneralLedger.Designer.vb">
+      <DependentUpon>frmGeneralLedger.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\frmGeneralLedger.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\frmTrialBalance.Designer.vb">
+      <DependentUpon>frmTrialBalance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\frmTrialBalance.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="bin\Debug\frmScheduleAccount.Designer.vb">
       <DependentUpon>frmScheduleAccount.vb</DependentUpon>
     </Compile>
@@ -115,6 +133,24 @@
     <Compile Include="bin\Debug\frmSubsidiaryLedger.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="bin\Debug\frmIncomeStatementLong.Designer.vb">
+      <DependentUpon>frmIncomeStatementLong.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\frmIncomeStatementLong.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptBalanceSheet.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBalanceSheet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptBalanceSheetSumm.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBalanceSheetSumm.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="bin\Debug\rptCRLedger1.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,6 +161,30 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptCRLedger2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptGeneralLedger.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptGeneralLedger.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptGeneralLedgerSumm.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptGeneralLedgerSumm.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptIncomeStatement.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptIncomeStatement.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptIncomeStatementSumm.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptIncomeStatementSumm.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="bin\Debug\rptSchedule_Cont1.vb">
@@ -143,6 +203,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptSchedule_Sub.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptTrialBalance.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTrialBalance.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptTrialBalanceSumm.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTrialBalanceSumm.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="bin\Debug\sample.vb">
@@ -187,6 +259,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="bin\Debug\frmBalanceSheetLong.resx">
+      <DependentUpon>frmBalanceSheetLong.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\frmGeneralLedger.resx">
+      <DependentUpon>frmGeneralLedger.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\frmTrialBalance.resx">
+      <DependentUpon>frmTrialBalance.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\frmScheduleAccount.resx">
       <DependentUpon>frmScheduleAccount.vb</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +280,17 @@
     <EmbeddedResource Include="bin\Debug\frmSubsidiaryLedger.resx">
       <DependentUpon>frmSubsidiaryLedger.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\frmIncomeStatementLong.resx">
+      <DependentUpon>frmIncomeStatementLong.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptBalanceSheet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBalanceSheet.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptBalanceSheetSumm.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBalanceSheetSumm.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\rptCRLedger1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptCRLedger1.vb</LastGenOutput>
@@ -206,6 +298,22 @@
     <EmbeddedResource Include="bin\Debug\rptCRLedger2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptCRLedger2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptGeneralLedger.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptGeneralLedger.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptGeneralLedgerSumm.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptGeneralLedgerSumm.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptIncomeStatement.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptIncomeStatement.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptIncomeStatementSumm.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptIncomeStatementSumm.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\rptSchedule_Cont1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -218,6 +326,14 @@
     <EmbeddedResource Include="bin\Debug\rptSchedule_Sub.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptSchedule_Sub.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptTrialBalance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTrialBalance.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptTrialBalanceSumm.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTrialBalanceSumm.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\sample.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

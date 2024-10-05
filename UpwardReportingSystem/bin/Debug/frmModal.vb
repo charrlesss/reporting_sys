@@ -74,13 +74,11 @@
             Case "Subsidiary Ledger"
                 ShowFormInPanel(New frmSubsidiaryLedger())
             Case "Trial Balance"
-
-
+                ShowFormInPanel(New frmTrialBalance())
             Case "Income Statement - Long"
-
-
+                ShowFormInPanel(New frmIncomeStatementLong())
             Case "Balance Sheet - Long"
-
+                ShowFormInPanel(New frmBalanceSheetLong())
 
             Case "General Ledger"
                 MessageBox.Show("General Ledger selected")

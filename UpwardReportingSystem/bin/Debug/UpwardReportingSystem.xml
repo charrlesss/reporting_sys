@@ -22,6 +22,30 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.TrialBalanceDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.TrialBalance_DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.IncomeStatementDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.IncomeStatementSummDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.BalanceSheetDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.BalanceSheetSummDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:UpwardReportingSystem.DataSet1.ScheduleRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -38,6 +62,30 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.TrialBalanceRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.TrialBalance_Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.IncomeStatementRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.IncomeStatementSummRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.BalanceSheetRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.BalanceSheetSummRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:UpwardReportingSystem.DataSet1.ScheduleRowChangeEvent">
 	<summary>
 Row event argument class
@@ -51,6 +99,30 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:UpwardReportingSystem.DataSet1.Generate_Subsidiary_LedgerRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.TrialBalanceRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.TrialBalance_RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.IncomeStatementRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.IncomeStatementSummRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.BalanceSheetRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.BalanceSheetSummRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>

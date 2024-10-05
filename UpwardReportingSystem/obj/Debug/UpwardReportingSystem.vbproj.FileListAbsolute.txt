@@ -15,3 +15,6 @@ C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\De
 C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmModal.resources
 C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmLoading.resources
 C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmSubsidiaryLedger.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmTrialBalance.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmIncomeStatementLong.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmBalanceSheetLong.resources
