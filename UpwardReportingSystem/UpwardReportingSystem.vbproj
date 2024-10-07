@@ -91,16 +91,34 @@
     <Compile Include="bin\Debug\DataSet1.vb">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="bin\Debug\frmAbstractCollection.Designer.vb">
+      <DependentUpon>frmAbstractCollection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\frmAbstractCollection.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="bin\Debug\frmBalanceSheetLong.Designer.vb">
       <DependentUpon>frmBalanceSheetLong.vb</DependentUpon>
     </Compile>
     <Compile Include="bin\Debug\frmBalanceSheetLong.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="bin\Debug\frmDepositCollection.Designer.vb">
+      <DependentUpon>frmDepositCollection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\frmDepositCollection.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="bin\Debug\frmGeneralLedger.Designer.vb">
       <DependentUpon>frmGeneralLedger.vb</DependentUpon>
     </Compile>
     <Compile Include="bin\Debug\frmGeneralLedger.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\frmReturnChecks.Designer.vb">
+      <DependentUpon>frmReturnChecks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\frmReturnChecks.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="bin\Debug\frmTrialBalance.Designer.vb">
@@ -139,6 +157,12 @@
     <Compile Include="bin\Debug\frmIncomeStatementLong.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="bin\Debug\rptAbstractOfCollections.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAbstractOfCollections.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="bin\Debug\rptBalanceSheet.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -161,6 +185,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptCRLedger2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptDepositedCollection.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDepositedCollection.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="bin\Debug\rptGeneralLedger.vb">
@@ -259,11 +289,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="bin\Debug\frmAbstractCollection.resx">
+      <DependentUpon>frmAbstractCollection.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\frmBalanceSheetLong.resx">
       <DependentUpon>frmBalanceSheetLong.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\frmDepositCollection.resx">
+      <DependentUpon>frmDepositCollection.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\frmGeneralLedger.resx">
       <DependentUpon>frmGeneralLedger.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\frmReturnChecks.resx">
+      <DependentUpon>frmReturnChecks.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\frmTrialBalance.resx">
       <DependentUpon>frmTrialBalance.vb</DependentUpon>
@@ -283,6 +322,10 @@
     <EmbeddedResource Include="bin\Debug\frmIncomeStatementLong.resx">
       <DependentUpon>frmIncomeStatementLong.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptAbstractOfCollections.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAbstractOfCollections.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\rptBalanceSheet.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptBalanceSheet.vb</LastGenOutput>
@@ -298,6 +341,10 @@
     <EmbeddedResource Include="bin\Debug\rptCRLedger2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptCRLedger2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptDepositedCollection.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDepositedCollection.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\rptGeneralLedger.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

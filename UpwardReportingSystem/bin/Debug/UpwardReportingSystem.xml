@@ -46,6 +46,26 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.GeneralLedgerDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.GeneralLedgerSummDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AbstracollectionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AbstractcollectionSumamryDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.DepositedCollectionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:UpwardReportingSystem.DataSet1.ScheduleRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -86,6 +106,26 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.GeneralLedgerRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.GeneralLedgerSummRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AbstracollectionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AbstractcollectionSumamryRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.DepositedCollectionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:UpwardReportingSystem.DataSet1.ScheduleRowChangeEvent">
 	<summary>
 Row event argument class
@@ -123,6 +163,26 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:UpwardReportingSystem.DataSet1.BalanceSheetSummRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.GeneralLedgerRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.GeneralLedgerSummRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AbstracollectionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AbstractcollectionSumamryRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.DepositedCollectionRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>

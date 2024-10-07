@@ -24,15 +24,10 @@
     Private Sub frmGeneralLedger_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadSubAccounts()
 
-        If sReport = "Transaction Summary Posting" Then
-            lblAccount.Enabled = False
-            cmbAccount.Enabled = False
-            lblReport.Enabled = False
-            cmbReport.Enabled = False
-        End If
+ 
 
         cmbFormat.SelectedIndex = 0
-        cmbReport.SelectedIndex = 0
+        cmbReport.SelectedIndex = 1
         cmbSubAcct.SelectedIndex = 0
         If cmbAccount.Enabled Then cmbAccount.SelectedIndex = 0
         dtDate.Value = Now
@@ -80,6 +75,8 @@
            {"date", dtDate.Value},
            {"sub_acct", cmbSubAcct.Text},
            {"dateFormat", cmbReport.Text},
+            {"transSumm", "0"},
+           {"account", cmbAccount.SelectedIndex},
            {"format", cmbFormat.SelectedIndex}
        }
         Form1.PostReportApi("/reports/accounting/general-ledger-report-desk", postData, AddressOf HandleApiResponse)

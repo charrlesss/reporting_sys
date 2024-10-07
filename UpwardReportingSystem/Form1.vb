@@ -205,6 +205,59 @@ Public Class Form1
         End If
     End Sub
 
+    Public Sub PostReportWithSummaryApi(url As String, postData As Dictionary(Of String, String), callback As CallbackDelegateSummary)
+        Dim _url As String = __URL & "/api" & url
+
+        ' Serialize the data object to JSON
+        Dim jsonPayload As String = JsonConvert.SerializeObject(postData)
+
+        ' Create a request to the API
+        Dim request As HttpWebRequest = DirectCast(WebRequest.Create(_url), HttpWebRequest)
+        request.Method = "POST"
+
+
+        request.ContentType = "application/json"
+        request.Headers("Authorization") = "Bearer " & ACCESS_TOKEN
+
+        ' (Cookie setup omitted for brevity)
+
+        ' Convert the JSON payload to a byte array
+        Dim byteArray As Byte() = Encoding.UTF8.GetBytes(jsonPayload)
+        request.ContentLength = byteArray.Length
+
+        ' Write the JSON data to the request stream
+        Using dataStream As Stream = request.GetRequestStream()
+            dataStream.Write(byteArray, 0, byteArray.Length)
+        End Using
+
+        ' Get the response from the API
+        Dim jsonResponse As String
+        Using response As HttpWebResponse = DirectCast(request.GetResponse(), HttpWebResponse)
+            Using reader As New StreamReader(response.GetResponseStream())
+                jsonResponse = reader.ReadToEnd()
+            End Using
+        End Using
+
+        ' Deserialize the JSON response to a JObject
+        Dim jsonObject As JObject = JObject.Parse(jsonResponse)
+
+        ' Extract the "data" field as a JArray (adjust the key name based on your API response)
+        Dim dataArray As JArray = jsonObject("data")
+
+        Dim dataSummaryArray As JArray = jsonObject("summary")
+
+
+        ' Deserialize the JArray to a DataTable
+        Dim dtbs As DataTable = JsonConvert.DeserializeObject(Of DataTable)(dataArray.ToString())
+        Dim dtbs_summary As DataTable = JsonConvert.DeserializeObject(Of DataTable)(dataSummaryArray.ToString())
+
+        If callback IsNot Nothing Then
+            callback(dtbs, dtbs_summary)
+        End If
+    End Sub
+
+
+
     Public Sub GetReportTableApi(url As String, callback As CallbackDelegate)
         Dim _url As String = __URL & "/api" & url
 
@@ -243,6 +296,7 @@ Public Class Form1
 
     Public Delegate Sub CallbackDelegate(data As DataTable)
 
+    Public Delegate Sub CallbackDelegateSummary(dt As DataTable, dtSummary As DataTable)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Me.FormBorderStyle = FormBorderStyle.None

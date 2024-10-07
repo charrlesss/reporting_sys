@@ -18,3 +18,7 @@ C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\De
 C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmTrialBalance.resources
 C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmIncomeStatementLong.resources
 C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmBalanceSheetLong.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmGeneralLedger.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmAbstractCollection.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmDepositCollection.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmReturnChecks.resources

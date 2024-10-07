@@ -23,15 +23,9 @@
     Private Sub IncomeStatementLong_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadSubAccounts()
 
-        If sReport = "Transaction Summary Posting" Then
-            lblAccount.Enabled = False
-            cmbAccount.Enabled = False
-            lblReport.Enabled = False
-            cmbReport.Enabled = False
-        End If
-
+    
         cmbFormat.SelectedIndex = 0
-        cmbReport.SelectedIndex = 0
+        cmbReport.SelectedIndex = 1
         cmbSubAcct.SelectedIndex = 0
         If cmbAccount.Enabled Then cmbAccount.SelectedIndex = 0
         dtDate.Value = Now

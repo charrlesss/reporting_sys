@@ -79,55 +79,39 @@
                 ShowFormInPanel(New frmIncomeStatementLong())
             Case "Balance Sheet - Long"
                 ShowFormInPanel(New frmBalanceSheetLong())
-
             Case "General Ledger"
-                MessageBox.Show("General Ledger selected")
-
+                ShowFormInPanel(New frmGeneralLedger())
             Case "Abstract of Collection"
-                MessageBox.Show("Abstract of Collection selected")
-
+                ShowFormInPanel(New frmAbstractCollection())
             Case "Deposited Collections"
-                MessageBox.Show("Deposited Collections selected")
-
+                ShowFormInPanel(New frmDepositCollection())
             Case "Returned Checks"
-                MessageBox.Show("Returned Checks selected")
+                ShowFormInPanel(New frmReturnChecks())
 
             Case "Post Dated Checks Registry"
                 MessageBox.Show("Post Dated Checks Registry selected")
-
             Case "Petty Cash Fund Disbursement"
                 MessageBox.Show("Petty Cash Fund Disbursement selected")
-
             Case "Cash Disbursement Book - CDB"
                 MessageBox.Show("Cash Disbursement Book - CDB selected")
-
             Case "General Journal Book - GJB"
                 MessageBox.Show("General Journal Book - GJB selected")
-
             Case "Production Book - PB"
                 MessageBox.Show("Production Book - PB selected")
-
             Case "VAT Book - VB"
                 MessageBox.Show("VAT Book - VB selected")
-
             Case "Aging of Accounts"
                 MessageBox.Show("Aging of Accounts selected")
-
             Case "Cancelled Accounts"
                 MessageBox.Show("Cancelled Accounts selected")
-
             Case "Fully Paid Accounts"
                 MessageBox.Show("Fully Paid Accounts selected")
-
             Case "Production Report"
                 MessageBox.Show("Production Report selected")
-
             Case "Renewal Notice"
                 MessageBox.Show("Renewal Notice selected")
-
             Case "Claims Report"
                 MessageBox.Show("Claims Report selected")
-
             Case Else
                 MessageBox.Show("Unknown option selected")
         End Select
@@ -152,4 +136,5 @@
     End Sub
 
 
+  
 End Class
