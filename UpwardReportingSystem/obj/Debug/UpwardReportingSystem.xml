@@ -66,6 +66,26 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.ReturnChecksDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.PostDatedChecksDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.PettyCashFundDisbursementDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.CashDisbursementDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AgingDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:UpwardReportingSystem.DataSet1.ScheduleRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -126,6 +146,26 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.ReturnChecksRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.PostDatedChecksRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.PettyCashFundDisbursementRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.CashDisbursementRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AgingRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:UpwardReportingSystem.DataSet1.ScheduleRowChangeEvent">
 	<summary>
 Row event argument class
@@ -183,6 +223,26 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:UpwardReportingSystem.DataSet1.DepositedCollectionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.ReturnChecksRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.PostDatedChecksRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.PettyCashFundDisbursementRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.CashDisbursementRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AgingRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>

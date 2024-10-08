@@ -83,6 +83,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bin\Debug\frmAgingAccounts.Designer.vb">
+      <DependentUpon>frmAgingAccounts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\frmAgingAccounts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\frmCashDisbursementBook.Designer.vb">
+      <DependentUpon>frmCashDisbursementBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\frmCashDisbursementBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="bin\Debug\DataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,10 +121,28 @@
     <Compile Include="bin\Debug\frmDepositCollection.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="bin\Debug\frmGeneralJournalBook.Designer.vb">
+      <DependentUpon>frmGeneralJournalBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\frmGeneralJournalBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="bin\Debug\frmGeneralLedger.Designer.vb">
       <DependentUpon>frmGeneralLedger.vb</DependentUpon>
     </Compile>
     <Compile Include="bin\Debug\frmGeneralLedger.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\frmPettyCashFundDisbursement.Designer.vb">
+      <DependentUpon>frmPettyCashFundDisbursement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\frmPettyCashFundDisbursement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\frmPostDatedChecksRegistry.Designer.vb">
+      <DependentUpon>frmPostDatedChecksRegistry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\frmPostDatedChecksRegistry.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="bin\Debug\frmReturnChecks.Designer.vb">
@@ -163,6 +193,12 @@
       <DependentUpon>rptAbstractOfCollections.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="bin\Debug\rptAging.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAging.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="bin\Debug\rptBalanceSheet.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -173,6 +209,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptBalanceSheetSumm.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptBookFormat.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBookFormat.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="bin\Debug\rptCRLedger1.vb">
@@ -215,6 +257,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptIncomeStatementSumm.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptPDCRegister.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPDCRegister.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptPettyCashFund.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPettyCashFund.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\rptReturnedChecks.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReturnedChecks.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="bin\Debug\rptSchedule_Cont1.vb">
@@ -289,6 +349,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="bin\Debug\frmAgingAccounts.resx">
+      <DependentUpon>frmAgingAccounts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\frmCashDisbursementBook.resx">
+      <DependentUpon>frmCashDisbursementBook.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\frmAbstractCollection.resx">
       <DependentUpon>frmAbstractCollection.vb</DependentUpon>
     </EmbeddedResource>
@@ -298,8 +364,17 @@
     <EmbeddedResource Include="bin\Debug\frmDepositCollection.resx">
       <DependentUpon>frmDepositCollection.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\frmGeneralJournalBook.resx">
+      <DependentUpon>frmGeneralJournalBook.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\frmGeneralLedger.resx">
       <DependentUpon>frmGeneralLedger.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\frmPettyCashFundDisbursement.resx">
+      <DependentUpon>frmPettyCashFundDisbursement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\frmPostDatedChecksRegistry.resx">
+      <DependentUpon>frmPostDatedChecksRegistry.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\frmReturnChecks.resx">
       <DependentUpon>frmReturnChecks.vb</DependentUpon>
@@ -326,6 +401,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptAbstractOfCollections.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptAging.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAging.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\rptBalanceSheet.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptBalanceSheet.vb</LastGenOutput>
@@ -333,6 +412,10 @@
     <EmbeddedResource Include="bin\Debug\rptBalanceSheetSumm.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptBalanceSheetSumm.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptBookFormat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBookFormat.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\rptCRLedger1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -361,6 +444,18 @@
     <EmbeddedResource Include="bin\Debug\rptIncomeStatementSumm.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptIncomeStatementSumm.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptPDCRegister.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPDCRegister.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptPettyCashFund.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPettyCashFund.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\rptReturnedChecks.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReturnedChecks.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\rptSchedule_Cont1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

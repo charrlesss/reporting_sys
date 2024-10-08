@@ -22,3 +22,8 @@ C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\De
 C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmAbstractCollection.resources
 C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmDepositCollection.resources
 C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmReturnChecks.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmPostDatedChecksRegistry.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmPettyCashFundDisbursement.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmCashDisbursementBook.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmGeneralJournalBook.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmAgingAccounts.resources

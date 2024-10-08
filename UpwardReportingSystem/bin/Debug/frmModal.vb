@@ -13,15 +13,15 @@
         "Petty Cash Fund Disbursement",
         "Cash Disbursement Book - CDB",
         "General Journal Book - GJB",
-        "Production Book - PB",
-        "VAT Book - VB",
         "Aging of Accounts",
-        "Cancelled Accounts",
-        "Fully Paid Accounts",
         "Production Report",
         "Renewal Notice",
         "Claims Report"
     }
+    '   "Production Book - PB",
+    ' "VAT Book - VB",
+    ' "Cancelled Accounts",
+    ' "Fully Paid Accounts",
 
     Dim dynamicContentPanel As New FlowLayoutPanel()
 
@@ -87,25 +87,24 @@
                 ShowFormInPanel(New frmDepositCollection())
             Case "Returned Checks"
                 ShowFormInPanel(New frmReturnChecks())
-
             Case "Post Dated Checks Registry"
-                MessageBox.Show("Post Dated Checks Registry selected")
+                ShowFormInPanel(New frmPostDatedChecksRegistry())
             Case "Petty Cash Fund Disbursement"
-                MessageBox.Show("Petty Cash Fund Disbursement selected")
+                ShowFormInPanel(New frmPettyCashFundDisbursement())
             Case "Cash Disbursement Book - CDB"
-                MessageBox.Show("Cash Disbursement Book - CDB selected")
+                ShowFormInPanel(New frmCashDisbursementBook())
             Case "General Journal Book - GJB"
-                MessageBox.Show("General Journal Book - GJB selected")
-            Case "Production Book - PB"
-                MessageBox.Show("Production Book - PB selected")
-            Case "VAT Book - VB"
-                MessageBox.Show("VAT Book - VB selected")
+                ShowFormInPanel(New frmGeneralJournalBook())
+                'Case "Production Book - PB"
+                '  MessageBox.Show("Production Book - PB selected")
+                ' Case "VAT Book - VB"
+                '  MessageBox.Show("VAT Book - VB selected")
             Case "Aging of Accounts"
-                MessageBox.Show("Aging of Accounts selected")
-            Case "Cancelled Accounts"
-                MessageBox.Show("Cancelled Accounts selected")
-            Case "Fully Paid Accounts"
-                MessageBox.Show("Fully Paid Accounts selected")
+                ShowFormInPanel(New frmAgingAccounts())
+                ' Case "Cancelled Accounts"
+                '  MessageBox.Show("Cancelled Accounts selected")
+                ' Case "Fully Paid Accounts"
+                ' MessageBox.Show("Fully Paid Accounts selected")
             Case "Production Report"
                 MessageBox.Show("Production Report selected")
             Case "Renewal Notice"
