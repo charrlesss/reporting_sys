@@ -25,6 +25,7 @@ Public Class Form1
     Dim up_ima_login As String = ""
     Dim up_at_login As String = ""
     Dim up_rt_login As String = ""
+    Public FieldStorage As New Dictionary(Of String, Object)
 
 
 
@@ -370,8 +371,7 @@ Public Class Form1
         Try
             Dim modal As New frmModal
 
-
-
+            modal.FormBorderStyle = FormBorderStyle.None
             modal.StartPosition = FormStartPosition.CenterParent
             modal.Owner = formodal
             modal.ShowDialog()

@@ -11,12 +11,28 @@
         cmbFormat.Items.Add(" All Accounts")
         cmbReport.Items.Add("Monthly")
         cmbSubAcct.Items.Add("ALL")
-        cmbFormat.SelectedIndex = 0
-        cmbReport.SelectedIndex = 0
-        cmbSubAcct.SelectedIndex = 0
-        lblPolicy.Visible = True
-        cmbpolicy.Visible = True
-        cmbpolicy.SelectedIndex = 0
+
+        If Form1.FieldStorage.ContainsKey("dtDate") And
+            Form1.FieldStorage.ContainsKey("cmbFormat") And
+            Form1.FieldStorage.ContainsKey("cmbReport") And
+            Form1.FieldStorage.ContainsKey("cmbSubAcct") And
+            Form1.FieldStorage.ContainsKey("cmbpolicy") Then
+
+            dtDate.Value = Form1.FieldStorage("dtDate")
+            cmbFormat.SelectedIndex = Form1.FieldStorage("cmbFormat")
+            cmbReport.SelectedIndex = Form1.FieldStorage("cmbReport")
+            cmbSubAcct.SelectedIndex = Form1.FieldStorage("cmbSubAcct")
+            cmbpolicy.SelectedIndex = Form1.FieldStorage("cmbpolicy")
+        Else
+            cmbFormat.SelectedIndex = 0
+            cmbReport.SelectedIndex = 0
+            cmbSubAcct.SelectedIndex = 0
+            cmbpolicy.SelectedIndex = 0
+        End If
+
+
+     
+
         ReportTitle()
     End Sub
 
@@ -41,6 +57,8 @@
             MsgBox("No Record Found!")
             Exit Sub
         End If
+
+        StoredFields()
     
         Dim ADate As Date
 
@@ -61,7 +79,18 @@
         Form1.CrystalReportViewer1.Refresh()
         Form1.CrystalReportViewer1.ReportSource = rpt
         Me.ParentForm.Close()
-      
+     
 
     End Sub
+
+    Sub StoredFields()
+
+        Form1.FieldStorage("dtDate") = dtDate.Value
+        Form1.FieldStorage("cmbReport") = cmbReport.SelectedIndex
+        Form1.FieldStorage("cmbFormat") = cmbFormat.SelectedIndex
+        Form1.FieldStorage("cmbSubAcct") = cmbSubAcct.SelectedIndex
+        Form1.FieldStorage("cmbpolicy") = cmbpolicy.SelectedIndex
+    End Sub
+
+ 
 End Class

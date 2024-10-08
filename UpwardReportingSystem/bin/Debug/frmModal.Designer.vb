@@ -22,12 +22,14 @@ Partial Class frmModal
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmModal))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -36,6 +38,7 @@ Partial Class frmModal
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.Highlight
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -61,7 +64,7 @@ Partial Class frmModal
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 39)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(719, 393)
+        Me.Panel2.Size = New System.Drawing.Size(719, 382)
         Me.Panel2.TabIndex = 2
         '
         'Panel4
@@ -70,7 +73,7 @@ Partial Class frmModal
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(276, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(443, 393)
+        Me.Panel4.Size = New System.Drawing.Size(443, 382)
         Me.Panel4.TabIndex = 1
         '
         'Panel3
@@ -80,7 +83,7 @@ Partial Class frmModal
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(276, 393)
+        Me.Panel3.Size = New System.Drawing.Size(276, 382)
         Me.Panel3.TabIndex = 0
         '
         'FlowLayoutPanel1
@@ -89,14 +92,26 @@ Partial Class frmModal
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(276, 393)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(276, 382)
         Me.FlowLayoutPanel1.TabIndex = 1
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.ForeColor = System.Drawing.Color.Transparent
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(687, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(29, 30)
+        Me.Button1.TabIndex = 1
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'frmModal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(719, 432)
+        Me.ClientSize = New System.Drawing.Size(719, 421)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmModal"
@@ -113,4 +128,5 @@ Partial Class frmModal
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents FlowLayoutPanel1 As System.Windows.Forms.FlowLayoutPanel
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
