@@ -27,3 +27,6 @@ C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\De
 C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmCashDisbursementBook.resources
 C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmGeneralJournalBook.resources
 C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmAgingAccounts.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmClaims.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmRenewalNotice.resources
+C:\Users\user\Desktop\charles\UpwardReportingSystem\UpwardReportingSystem\obj\Debug\UpwardReportingSystem.frmProductionReport.resources

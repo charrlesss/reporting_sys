@@ -15,34 +15,13 @@
             Next
         End If
     End Sub
-    Sub getPolicyType(dt As DataTable)
-        If dt.Rows.Count > 0 Then
-            cmbSubAcct.Items.Add("ALL")
-            For i As Integer = 0 To dt.Rows.Count - 1
-                cmbSubAcct.Items.Add(dt(i)(0).ToString)
-            Next
-        End If
-    End Sub
-    Sub getAccounts(dt As DataTable)
-        If dt.Rows.Count > 0 Then
-            cmbSubAcct.Items.Add("ALL")
-            For i As Integer = 0 To dt.Rows.Count - 1
-                cmbSubAcct.Items.Add(dt(i)("Account").ToString)
-            Next
-        End If
-    End Sub
+
 
     Private Sub LoadSubAccounts()
         Form1.GetReportTableApi("/reports/accounting/get-sub-account-trial", AddressOf getSubAccount)
     End Sub
 
-    Private Sub LoadType()
-        Form1.GetReportTableApi("/reports/accounting/get-report-policy-types", AddressOf getPolicyType)
-    End Sub
 
-    Private Sub LoadAccounts()
-        Form1.GetReportTableApi("/reports/accounting/get-report-policy-accounts", AddressOf getAccounts)
-    End Sub
 
     Sub loadControls()
         cmbFormat.Items.Clear()

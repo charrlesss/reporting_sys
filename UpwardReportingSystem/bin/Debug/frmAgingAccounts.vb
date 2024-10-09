@@ -30,9 +30,6 @@
             cmbpolicy.SelectedIndex = 0
         End If
 
-
-     
-
         ReportTitle()
     End Sub
 

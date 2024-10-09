@@ -1,4 +1,2 @@
-﻿
-
-Partial Public Class DataSet1
+﻿Partial Class DataSet1
 End Class

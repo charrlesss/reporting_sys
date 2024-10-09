@@ -1,0 +1,280 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+UpwardReportingSystem
+</name>
+</assembly>
+<members>
+<member name="T:UpwardReportingSystem.DataSet1.ScheduleDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.Schedule_IDDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.Schedule_ConDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.Generate_Subsidiary_LedgerDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.TrialBalanceDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.TrialBalance_DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.IncomeStatementDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.IncomeStatementSummDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.BalanceSheetDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.BalanceSheetSummDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.GeneralLedgerDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.GeneralLedgerSummDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AbstracollectionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AbstractcollectionSumamryDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.DepositedCollectionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.ReturnChecksDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.PostDatedChecksDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.PettyCashFundDisbursementDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.CashDisbursementDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AgingDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.ClaimsReportDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.ScheduleRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.Schedule_IDRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.Schedule_ConRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.Generate_Subsidiary_LedgerRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.TrialBalanceRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.TrialBalance_Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.IncomeStatementRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.IncomeStatementSummRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.BalanceSheetRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.BalanceSheetSummRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.GeneralLedgerRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.GeneralLedgerSummRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AbstracollectionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AbstractcollectionSumamryRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.DepositedCollectionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.ReturnChecksRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.PostDatedChecksRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.PettyCashFundDisbursementRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.CashDisbursementRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AgingRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.ClaimsReportRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.ScheduleRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.Schedule_IDRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.Schedule_ConRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.Generate_Subsidiary_LedgerRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.TrialBalanceRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.TrialBalance_RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.IncomeStatementRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.IncomeStatementSummRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.BalanceSheetRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.BalanceSheetSummRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.GeneralLedgerRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.GeneralLedgerSummRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AbstracollectionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AbstractcollectionSumamryRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.DepositedCollectionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.ReturnChecksRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.PostDatedChecksRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.PettyCashFundDisbursementRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.CashDisbursementRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.AgingRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.ClaimsReportRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="P:UpwardReportingSystem.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:UpwardReportingSystem.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:UpwardReportingSystem.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

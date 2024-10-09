@@ -95,22 +95,14 @@
                 ShowFormInPanel(New frmCashDisbursementBook())
             Case "General Journal Book - GJB"
                 ShowFormInPanel(New frmGeneralJournalBook())
-                'Case "Production Book - PB"
-                '  MessageBox.Show("Production Book - PB selected")
-                ' Case "VAT Book - VB"
-                '  MessageBox.Show("VAT Book - VB selected")
             Case "Aging of Accounts"
                 ShowFormInPanel(New frmAgingAccounts())
-                ' Case "Cancelled Accounts"
-                '  MessageBox.Show("Cancelled Accounts selected")
-                ' Case "Fully Paid Accounts"
-                ' MessageBox.Show("Fully Paid Accounts selected")
             Case "Production Report"
-                MessageBox.Show("Production Report selected")
+                ShowFormInPanel(New frmProductionReport())
             Case "Renewal Notice"
-                MessageBox.Show("Renewal Notice selected")
+                ShowFormInPanel(New frmRenewalNotice())
             Case "Claims Report"
-                MessageBox.Show("Claims Report selected")
+                ShowFormInPanel(New frmClaims())
             Case Else
                 MessageBox.Show("Unknown option selected")
         End Select

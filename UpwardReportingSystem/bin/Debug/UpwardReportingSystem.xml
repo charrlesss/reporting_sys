@@ -86,6 +86,26 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.ClaimsReportDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.RenewalNoticeDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.RenewalNoticeFireDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.RenewalNoticeMARDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.RenewalNoticePADataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:UpwardReportingSystem.DataSet1.ScheduleRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -163,6 +183,26 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member><member name="T:UpwardReportingSystem.DataSet1.AgingRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.ClaimsReportRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.RenewalNoticeRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.RenewalNoticeFireRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.RenewalNoticeMARRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.RenewalNoticePARow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
@@ -246,6 +286,26 @@ Row event argument class
 	<summary>
 Row event argument class
 </summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.ClaimsReportRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.RenewalNoticeRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.RenewalNoticeFireRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.RenewalNoticeMARRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet1.RenewalNoticePARowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
 </member><member name="T:UpwardReportingSystem.DataSet1">
 	<summary>
 Represents a strongly typed in-memory cache of data.
@@ -262,6 +322,22 @@ Represents a strongly typed in-memory cache of data.
 </member><member name="T:UpwardReportingSystem.My.Resources.Resources">
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet2.RenewalNoticePADataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet2.RenewalNoticePARow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet2.RenewalNoticePARowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet2">
+	<summary>
+Represents a strongly typed in-memory cache of data.
 </summary>
 </member>
 </members>
