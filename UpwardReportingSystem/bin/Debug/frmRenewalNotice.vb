@@ -1,6 +1,6 @@
 ﻿Public Class frmRenewalNotice
     Private Sub ReportTitle()
-        txtReportTitle.Text = "UPWARD MANAGEMENT INSURANCE SERVICES " & vbCrLf &
+        txtReportTitle.Text = Form1.ReportTitleByDepartment & vbCrLf &
                                 "Renewal Notice Report"
     End Sub
 
@@ -42,6 +42,7 @@
     End Sub
 
     Sub HandleApiResponse(dt As DataTable)
+        StoredFields()
         Form1.HideLoading()
         If (dt.Rows.Count <= 0) Then
             MsgBox("No Record Found!")
@@ -88,26 +89,38 @@
         End If
 
 
-      
+
         Me.ParentForm.Close()
 
 
     End Sub
 
     Sub StoredFields()
-
-        'Form1.FieldStorage("dtDate") = dtDate.Value
-        ' Form1.FieldStorage("cmbReport") = cmbReport.SelectedIndex
-        ' Form1.FieldStorage("cmbFormat") = cmbFormat.SelectedIndex
-        ' Form1.FieldStorage("cmbSubAcct") = cmbSubAcct.SelectedIndex
-        ' Form1.FieldStorage("cmbpolicy") = cmbpolicy.SelectedIndex
+        Form1.FieldStorage("renewal_notice_cmbPolicy") = cmbPolicy.SelectedIndex
+        Form1.FieldStorage("renewal_notice_cmbAccount") = cmbAccount.SelectedIndex
+        Form1.FieldStorage("renewal_notice_cmbType") = cmbType.SelectedIndex
+        Form1.FieldStorage("renewal_notice_dtDate") = dtDate.Value
     End Sub
 
     Private Sub frmRenewalNotice_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadType()
         LoadAccounts()
-        cmbAccount.SelectedIndex = 0
-        cmbPolicy.SelectedIndex = 0
-        cmbType.SelectedIndex = 0
+
+        If Form1.FieldStorage.ContainsKey("renewal_notice_cmbPolicy") And
+            Form1.FieldStorage.ContainsKey("renewal_notice_cmbAccount") And
+            Form1.FieldStorage.ContainsKey("renewal_notice_cmbType") And
+            Form1.FieldStorage.ContainsKey("renewal_notice_dtDate") Then
+
+            cmbPolicy.SelectedIndex = Form1.FieldStorage("renewal_notice_cmbPolicy")
+            cmbAccount.SelectedIndex = Form1.FieldStorage("renewal_notice_cmbAccount")
+            cmbType.SelectedIndex = Form1.FieldStorage("renewal_notice_cmbType")
+            dtDate.Value = Form1.FieldStorage("renewal_notice_dtDate")
+        Else
+            cmbAccount.SelectedIndex = 0
+            cmbPolicy.SelectedIndex = 0
+            cmbType.SelectedIndex = 0
+        End If
+
+
     End Sub
 End Class

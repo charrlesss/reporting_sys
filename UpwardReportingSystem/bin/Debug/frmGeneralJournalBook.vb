@@ -3,7 +3,7 @@
     Public sReport As String = "General Journal Book"
 
     Private Sub ReportTitle()
-        txtReportTitle.Text = "UPWARD MANAGEMENT INSURANCE SERVICES " & IIf(cmbSubAcct.Text = "ALL", "", "(" & cmbSubAcct.Text & ")") & vbCrLf &
+        txtReportTitle.Text = Form1.ReportTitleByDepartment & IIf(cmbSubAcct.Text = "ALL", "", "(" & cmbSubAcct.Text & ")") & vbCrLf &
                         cmbReport.Text & " " & sReport & IIf(cmbFormat.SelectedIndex = 0, "", " Summary") & vbCrLf & _
                          dtDate.Text
     End Sub
@@ -32,11 +32,28 @@
         cmbOrder.Items.Add("Ascending")
         cmbOrder.Items.Add("Descending")
 
-        cmbFormat.SelectedIndex = 0
-        cmbReport.SelectedIndex = 1
-        cmbSubAcct.SelectedIndex = 0
-        cmbSort.SelectedIndex = 0
-        cmbOrder.SelectedIndex = 0
+
+        If Form1.FieldStorage.ContainsKey("general_journal_cmbFormat") And
+        Form1.FieldStorage.ContainsKey("general_journal_cmbReport") And
+        Form1.FieldStorage.ContainsKey("general_journal_cmbSubAcct") And
+        Form1.FieldStorage.ContainsKey("general_journal_dtDate") And
+        Form1.FieldStorage.ContainsKey("general_journal_cmbOrder") And
+        Form1.FieldStorage.ContainsKey("general_journal_cmbSort") Then
+
+            cmbFormat.SelectedIndex = Form1.FieldStorage("general_journal_cmbFormat")
+            cmbReport.SelectedIndex = Form1.FieldStorage("general_journal_cmbReport")
+            cmbSubAcct.SelectedIndex = Form1.FieldStorage("general_journal_cmbSubAcct")
+            dtDate.Value = Form1.FieldStorage("general_journal_dtDate")
+            cmbOrder.SelectedIndex = Form1.FieldStorage("general_journal_cmbOrder")
+            cmbSort.SelectedIndex = Form1.FieldStorage("general_journal_cmbSort")
+        Else
+            cmbFormat.SelectedIndex = 0
+            cmbReport.SelectedIndex = 1
+            cmbSubAcct.SelectedIndex = 0
+            cmbSort.SelectedIndex = 0
+            cmbOrder.SelectedIndex = 0
+        End If
+
     End Sub
 
     Private Sub cmbReport_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbReport.SelectedIndexChanged
@@ -80,6 +97,7 @@
         Form1.PostReportWithSummaryApi("/reports/accounting/general-journal-book-gjb-desk", postData, AddressOf HandleApiResponse)
     End Sub
     Sub HandleApiResponse(dt As DataTable, dtSummary As DataTable)
+        StoredFields()
         Form1.HideLoading()
         If (dt.Rows.Count <= 0 And dtSummary.Rows.Count <= 0) Then
             MsgBox("No Record Found!")
@@ -96,7 +114,13 @@
         Me.ParentForm.Close()
     End Sub
 
-    Private Sub txtReportTitle_TextChanged(sender As Object, e As EventArgs) Handles txtReportTitle.TextChanged
+    Sub StoredFields()
 
+        Form1.FieldStorage("general_journal_cmbFormat") = cmbFormat.SelectedIndex
+        Form1.FieldStorage("general_journal_cmbReport") = cmbReport.SelectedIndex
+        Form1.FieldStorage("general_journal_cmbSubAcct") = cmbSubAcct.SelectedIndex
+        Form1.FieldStorage("general_journal_dtDate") = dtDate.Value
+        Form1.FieldStorage("general_journal_cmbOrder") = cmbOrder.SelectedIndex
+        Form1.FieldStorage("general_journal_cmbSort") = cmbSort.SelectedIndex
     End Sub
 End Class

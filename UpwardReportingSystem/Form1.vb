@@ -17,16 +17,16 @@ Public Class Form1
 
     Dim ACCESS_TOKEN As String = ""
     Dim REFRESH_TOKEN As String = ""
-    Dim DEPARTMENT As String = ""
+    Public DEPARTMENT As String = ""
     Dim IS_ADMIN As String = ""
-    Dim ACCESS As String = ""
+    Public ACCESS As String = ""
     Dim up_ac_login As String = ""
     Dim up_dpm_login As String = ""
     Dim up_ima_login As String = ""
     Dim up_at_login As String = ""
     Dim up_rt_login As String = ""
     Public FieldStorage As New Dictionary(Of String, Object)
-
+    Public ReportTitleByDepartment As String = ""
 
 
     Public Sub ShowLoading()
@@ -330,6 +330,11 @@ Public Class Form1
                             REFRESH_TOKEN = valuePart.Trim()
                         Case "DEPARTMENT"
                             DEPARTMENT = valuePart.Trim()
+                            If DEPARTMENT = "UMIS" Then
+                                ReportTitleByDepartment = "UPWARD MANAGEMENT INSURANCE SERVICES "
+                            Else
+                                ReportTitleByDepartment = "UPWARD CONSULTANCY SERVICES AND MANAGEMENT INC. "
+                            End If
                         Case "IS_ADMIN"
                             IS_ADMIN = valuePart.Trim()
                         Case "ACCESS"

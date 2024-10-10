@@ -3,7 +3,7 @@
     Dim dt As DataTable
     Public sReport As String = "Returned Checks"
     Private Sub ReportTitle()
-        txtReportTitle.Text = "UPWARD MANAGEMENT INSURANCE SERVICES " & vbCrLf & _
+        txtReportTitle.Text = Form1.ReportTitleByDepartment & vbCrLf & _
                          cmbReport.Text & " " & sReport & vbCrLf & dtDate.Text
 
 
@@ -47,13 +47,32 @@
 
     Private Sub frmAbstractCollection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadControls()
+        If Form1.FieldStorage.ContainsKey("return_checks_cmbFormat") And
+            Form1.FieldStorage.ContainsKey("return_checks_cmbReport") And
+            Form1.FieldStorage.ContainsKey("return_checks_cmbSubAcct") And
+            Form1.FieldStorage.ContainsKey("return_checks_cmbReport") And
+            Form1.FieldStorage.ContainsKey("return_checks_cmbpolicy") And
+            Form1.FieldStorage.ContainsKey("return_checks_cmbSort") And
+            Form1.FieldStorage.ContainsKey("return_checks_cmbOrder") And
+            Form1.FieldStorage.ContainsKey("return_checks_dtDate") Then
+            cmbFormat.SelectedIndex = Form1.FieldStorage("return_checks_cmbFormat")
+            cmbReport.SelectedIndex = Form1.FieldStorage("return_checks_cmbReport")
+            cmbSubAcct.SelectedIndex = Form1.FieldStorage("return_checks_cmbSubAcct")
+            cmbReport.SelectedIndex = Form1.FieldStorage("return_checks_cmbReport")
+            cmbpolicy.SelectedIndex = Form1.FieldStorage("return_checks_cmbpolicy")
+            cmbSort.SelectedIndex = Form1.FieldStorage("return_checks_cmbSort")
+            cmbOrder.SelectedIndex = Form1.FieldStorage("return_checks_cmbOrder")
+            dtDate.Value = Form1.FieldStorage("return_checks_dtDate")
+        Else
+            cmbFormat.SelectedIndex = 0
+            cmbReport.SelectedIndex = 1
+            cmbSubAcct.SelectedIndex = 0
+            cmbOrder.SelectedIndex = 0
+            cmbSort.SelectedIndex = 0
+        End If
 
-        cmbFormat.SelectedIndex = 0
-        cmbReport.SelectedIndex = 1
-        cmbSubAcct.SelectedIndex = 0
-        cmbOrder.SelectedIndex = 0
-        cmbSort.SelectedIndex = 0
-
+        ReportTitle()
+       
     End Sub
 
     Private Sub cmbReport_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbReport.SelectedIndexChanged
@@ -102,6 +121,7 @@
         Form1.PostReportWithSummaryApi("/reports/accounting/return-checks-collection-desk", postData, AddressOf HandleApiResponse)
     End Sub
     Sub HandleApiResponse(dt As DataTable, dtSummary As DataTable)
+        StoredFields()
         Form1.HideLoading()
         If (dt.Rows.Count <= 0 And dtSummary.Rows.Count <= 0) Then
             MsgBox("No Record Found!")
@@ -116,6 +136,18 @@
         Form1.CrystalReportViewer1.Refresh()
         Form1.CrystalReportViewer1.ReportSource = rpt
         Me.ParentForm.Close()
+    End Sub
+
+    Sub StoredFields()
+     
+        Form1.FieldStorage("return_checks_cmbFormat") = cmbFormat.SelectedIndex
+        Form1.FieldStorage("return_checks_cmbReport") = cmbReport.SelectedIndex
+        Form1.FieldStorage("return_checks_cmbSubAcct") = cmbSubAcct.SelectedIndex
+        Form1.FieldStorage("return_checks_cmbReport") = cmbReport.SelectedIndex
+        Form1.FieldStorage("return_checks_cmbpolicy") = cmbpolicy.SelectedIndex
+        Form1.FieldStorage("return_checks_cmbSort") = cmbSort.SelectedIndex
+        Form1.FieldStorage("return_checks_cmbOrder") = cmbOrder.SelectedIndex
+        Form1.FieldStorage("return_checks_dtDate") = dtDate.Value
     End Sub
 
 End Class

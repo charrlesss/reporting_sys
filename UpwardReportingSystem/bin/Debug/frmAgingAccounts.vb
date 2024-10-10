@@ -2,7 +2,7 @@
     Public sReport As String = "Aging of Accounts"
 
     Private Sub ReportTitle()
-        txtReportTitle.Text = "UPWARD MANAGEMENT INSURANCE SERVICES " & vbCrLf &
+        txtReportTitle.Text = Form1.ReportTitleByDepartment & vbCrLf &
                         cmbReport.Text & " " & sReport & IIf(cmbFormat.SelectedIndex = 0, "", " Summary") & vbCrLf & _
                          dtDate.Text
     End Sub
@@ -49,14 +49,15 @@
 
 
     Sub HandleApiResponse(dt As DataTable)
+
+        StoredFields()
         Form1.HideLoading()
         If (dt.Rows.Count <= 0) Then
             MsgBox("No Record Found!")
             Exit Sub
         End If
 
-        StoredFields()
-    
+
         Dim ADate As Date
 
         If cmbReport.Text = "Monthly" Then
@@ -76,7 +77,7 @@
         Form1.CrystalReportViewer1.Refresh()
         Form1.CrystalReportViewer1.ReportSource = rpt
         Me.ParentForm.Close()
-     
+
 
     End Sub
 

@@ -45,12 +45,29 @@
         End Try
     End Sub
 
+    Sub PolicyAccount(dt As DataTable)
+
+        Try
+            ColWidth1 = 80
+            ColWidth2 = 179
+            ColWidth3 = 114
+            dgvSearch.DataSource = dt
+            dgvSearch.Columns(0).Width = ColWidth1
+            dgvSearch.Columns(1).Width = ColWidth2
+            dgvSearch.Columns(2).Width = ColWidth3
+            tslRecord.Text = IIf(dt.Rows.Count = 100, "Top ", "") & dt.Rows.Count.ToString("#,##0")
+        Catch
+        End Try
+    End Sub
+
     Private Sub LoadSearch(ByVal SearchFor As String, Optional ByVal Search As String = "")
         Dim StrQry As String = ""
 
         Select Case SearchFor
             Case "Chart of Account"
                 Form1.GetReportTableApi("/reports/accounting/chart-schedule-account-desk?account_search=" & Search & ExtraURLParams, AddressOf ChartAccount)
+            Case "Policy"
+                Form1.GetReportTableApi("/task/claims/claims/get-policy-desk?searchPolicy=" & Search & ExtraURLParams, AddressOf PolicyAccount)
         End Select
 
 
@@ -60,7 +77,7 @@
         myReturn = True
 
         RetVal1 = RVal1
-        RetVal2 = RVal2
+        RetVal2 = RVal2 & " : " & RVal3
         RetVal3 = RVal3
 
         Me.Hide()

@@ -22,6 +22,7 @@ Partial Class frmClaims
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmClaims))
         Me.txtReportTitle = New System.Windows.Forms.TextBox()
         Me.cmbFormat = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -40,6 +41,7 @@ Partial Class frmClaims
         Me.txtPolicyNo = New System.Windows.Forms.TextBox()
         Me.txtAssuredName = New System.Windows.Forms.TextBox()
         Me.lblAssuredName = New System.Windows.Forms.Label()
+        Me.btnSearch = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtReportTitle
@@ -200,7 +202,7 @@ Partial Class frmClaims
         '
         Me.txtPolicyNo.Location = New System.Drawing.Point(88, 145)
         Me.txtPolicyNo.Name = "txtPolicyNo"
-        Me.txtPolicyNo.Size = New System.Drawing.Size(332, 20)
+        Me.txtPolicyNo.Size = New System.Drawing.Size(296, 20)
         Me.txtPolicyNo.TabIndex = 128
         '
         'txtAssuredName
@@ -221,11 +223,29 @@ Partial Class frmClaims
         Me.lblAssuredName.TabIndex = 129
         Me.lblAssuredName.Text = "Assured Name:"
         '
+        'btnSearch
+        '
+        Me.btnSearch.BackColor = System.Drawing.Color.Transparent
+        Me.btnSearch.Cursor = System.Windows.Forms.Cursors.Default
+        Me.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen
+        Me.btnSearch.FlatAppearance.BorderSize = 0
+        Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearch.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearch.ForeColor = System.Drawing.Color.Black
+        Me.btnSearch.Image = CType(resources.GetObject("btnSearch.Image"), System.Drawing.Image)
+        Me.btnSearch.Location = New System.Drawing.Point(396, 144)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(24, 21)
+        Me.btnSearch.TabIndex = 131
+        Me.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSearch.UseVisualStyleBackColor = False
+        '
         'frmClaims
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(432, 405)
+        Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.txtAssuredName)
         Me.Controls.Add(Me.lblAssuredName)
         Me.Controls.Add(Me.txtPolicyNo)
@@ -268,4 +288,5 @@ Partial Class frmClaims
     Friend WithEvents txtPolicyNo As System.Windows.Forms.TextBox
     Friend WithEvents txtAssuredName As System.Windows.Forms.TextBox
     Friend WithEvents lblAssuredName As System.Windows.Forms.Label
+    Friend WithEvents btnSearch As System.Windows.Forms.Button
 End Class

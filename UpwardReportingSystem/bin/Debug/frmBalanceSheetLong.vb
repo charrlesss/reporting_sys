@@ -2,7 +2,7 @@
     Dim dt As DataTable
     Public sReport As String = "Balance Sheet - Long"
     Private Sub ReportTitle()
-        txtReportTitle.Text = "UPWARD MANAGEMENT INSURANCE SERVICES " & IIf(cmbSubAcct.Text = "ALL", "", "(" & cmbSubAcct.Text & ")") & vbCrLf & _
+        txtReportTitle.Text = Form1.ReportTitleByDepartment & IIf(cmbSubAcct.Text = "ALL", "", "(" & cmbSubAcct.Text & ")") & vbCrLf & _
                          cmbReport.Text & " " & sReport & IIf(cmbFormat.SelectedIndex = 1, " (Per Revenue Center)", "") & vbCrLf & _
                          dtDate.Text
     End Sub
@@ -23,13 +23,26 @@
     Private Sub frmBalanceSheetLong_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadSubAccounts()
 
-        cmbFormat.SelectedIndex = 0
-        cmbReport.SelectedIndex = 1
-        cmbSubAcct.SelectedIndex = 0
-        If cmbAccount.Enabled Then cmbAccount.SelectedIndex = 0
-        dtDate.Value = Now
+        If Form1.FieldStorage.ContainsKey("balance_sheet_cmbFormat") And
+        Form1.FieldStorage.ContainsKey("balance_sheet_cmbReport") And
+        Form1.FieldStorage.ContainsKey("balance_sheet_cmbSubAcct") And
+        Form1.FieldStorage.ContainsKey("balance_sheet_cmbAccount") And
+        Form1.FieldStorage.ContainsKey("balance_sheet_dtDate") Then
+            cmbFormat.SelectedIndex = Form1.FieldStorage("balance_sheet_cmbFormat")
+            cmbReport.SelectedIndex = Form1.FieldStorage("balance_sheet_cmbReport")
+            cmbSubAcct.SelectedIndex = Form1.FieldStorage("balance_sheet_cmbSubAcct")
+            cmbAccount.SelectedIndex = Form1.FieldStorage("balance_sheet_cmbAccount")
+            dtDate.Value = Form1.FieldStorage("balance_sheet_dtDate")
+        Else
+            cmbFormat.SelectedIndex = 0
+            cmbReport.SelectedIndex = 1
+            cmbSubAcct.SelectedIndex = 0
+            If cmbAccount.Enabled Then cmbAccount.SelectedIndex = 0
+            dtDate.Value = Now
+        End If
 
-        ReportTitle()
+            ReportTitle()
+
     End Sub
 
     Private Sub cmbReport_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbReport.SelectedIndexChanged
@@ -78,6 +91,7 @@
     End Sub
 
     Sub HandleApiResponse(dt As DataTable)
+        StoredFields()
         Form1.HideLoading()
         If (dt.Rows.Count <= 0) Then
             MsgBox("No Record Found!")
@@ -101,4 +115,14 @@
         End If
 
     End Sub
+
+
+    Sub StoredFields()
+        Form1.FieldStorage("balance_sheet_cmbFormat") = cmbFormat.SelectedIndex
+        Form1.FieldStorage("balance_sheet_cmbReport") = cmbReport.SelectedIndex
+        Form1.FieldStorage("balance_sheet_cmbSubAcct") = cmbSubAcct.SelectedIndex
+        Form1.FieldStorage("balance_sheet_cmbAccount") = cmbAccount.SelectedIndex
+        Form1.FieldStorage("balance_sheet_dtDate") = dtDate.Value
+    End Sub
+
 End Class

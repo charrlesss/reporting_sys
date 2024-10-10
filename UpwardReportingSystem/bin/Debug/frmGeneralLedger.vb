@@ -2,7 +2,7 @@
     Dim dt As DataTable
     Public sReport As String = "General Ledger"
     Private Sub ReportTitle()
-        txtReportTitle.Text = "UPWARD MANAGEMENT INSURANCE SERVICES " & IIf(cmbSubAcct.Text = "ALL", "", "(" & cmbSubAcct.Text & ")") & vbCrLf & _
+        txtReportTitle.Text = Form1.ReportTitleByDepartment & IIf(cmbSubAcct.Text = "ALL", "", "(" & cmbSubAcct.Text & ")") & vbCrLf & _
                          cmbReport.Text & " " & sReport & IIf(cmbFormat.SelectedIndex = 1, " (Per Revenue Center)", "") & vbCrLf & _
                          dtDate.Text
     End Sub
@@ -24,13 +24,24 @@
     Private Sub frmGeneralLedger_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadSubAccounts()
 
- 
+        If Form1.FieldStorage.ContainsKey("general_ledger_cmbFormat") And
+            Form1.FieldStorage.ContainsKey("general_ledger_cmbReport") And
+            Form1.FieldStorage.ContainsKey("general_ledger_cmbSubAcct") And
+            Form1.FieldStorage.ContainsKey("general_ledger_cmbAccount") And
+            Form1.FieldStorage.ContainsKey("general_ledger_dtDate") Then
 
-        cmbFormat.SelectedIndex = 0
-        cmbReport.SelectedIndex = 1
-        cmbSubAcct.SelectedIndex = 0
-        If cmbAccount.Enabled Then cmbAccount.SelectedIndex = 0
-        dtDate.Value = Now
+            cmbFormat.SelectedIndex = Form1.FieldStorage("general_ledger_cmbFormat")
+            cmbReport.SelectedIndex = Form1.FieldStorage("general_ledger_cmbReport")
+            cmbSubAcct.SelectedIndex = Form1.FieldStorage("general_ledger_cmbSubAcct")
+            cmbAccount.SelectedIndex = Form1.FieldStorage("general_ledger_cmbAccount")
+            dtDate.Value = Form1.FieldStorage("general_ledger_dtDate")
+        Else
+            cmbFormat.SelectedIndex = 0
+            cmbReport.SelectedIndex = 1
+            cmbSubAcct.SelectedIndex = 0
+            If cmbAccount.Enabled Then cmbAccount.SelectedIndex = 0
+            dtDate.Value = Now
+        End If
 
         ReportTitle()
     End Sub
@@ -83,6 +94,7 @@
     End Sub
 
     Sub HandleApiResponse(dt As DataTable)
+        StoredFields()
         Form1.HideLoading()
         If (dt.Rows.Count <= 0) Then
             MsgBox("No Record Found!")
@@ -105,4 +117,18 @@
             Me.ParentForm.Close()
         End If
     End Sub
+
+
+    Sub StoredFields()
+
+
+        Form1.FieldStorage("general_ledger_cmbFormat") = cmbFormat.SelectedIndex
+        Form1.FieldStorage("general_ledger_cmbReport") = cmbReport.SelectedIndex
+        Form1.FieldStorage("general_ledger_cmbSubAcct") = cmbSubAcct.SelectedIndex
+        Form1.FieldStorage("general_ledger_cmbAccount") = cmbAccount.SelectedIndex
+        Form1.FieldStorage("general_ledger_dtDate") = dtDate.Value
+   
+    End Sub
+
+
 End Class

@@ -327,11 +327,23 @@ Represents a strongly typed in-memory cache of data.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:UpwardReportingSystem.DataSet2.ProductionTPLDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:UpwardReportingSystem.DataSet2.RenewalNoticePARow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:UpwardReportingSystem.DataSet2.ProductionTPLRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:UpwardReportingSystem.DataSet2.RenewalNoticePARowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:UpwardReportingSystem.DataSet2.ProductionTPLRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>

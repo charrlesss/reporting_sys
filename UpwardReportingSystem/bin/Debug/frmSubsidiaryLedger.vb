@@ -15,16 +15,38 @@
 
 
     Private Sub ReportTitle()
-        txtReportTitle.Text = "UPWARD MANAGEMENT INSURANCE SERVICES " & vbCrLf & _
+        txtReportTitle.Text = Form1.ReportTitleByDepartment & vbCrLf & _
                               "Subsidiary Ledger" & vbCrLf & vbCrLf & _
                               "Account: " & txtAccountName.Text & " (" & txtAccount.Text & ")" & _
                               IIf(cmbSubsi.SelectedIndex = 0, "", vbCrLf & Subsi) & vbCrLf & _
                               "For the Period: " & dtDateFrom.Value.ToString("MMM dd, yyyy") & " to " & dtDateTo.Value.ToString("MMM dd, yyyy")
     End Sub
     Private Sub frmSubsidiaryLedger_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cmbSubsi.SelectedIndex = 0
-        cmbFormat.SelectedIndex = 0
-        cmbField.SelectedIndex = 0
+      
+        If Form1.FieldStorage.ContainsKey("subsidiary_ledger_cmbSubsi") And
+            Form1.FieldStorage.ContainsKey("subsidiary_ledger_cmbFormat") And
+            Form1.FieldStorage.ContainsKey("subsidiary_ledger_cmbField") And
+            Form1.FieldStorage.ContainsKey("subsidiary_ledger_dtDateFrom") And
+            Form1.FieldStorage.ContainsKey("subsidiary_ledger_dtDateTo") And
+            Form1.FieldStorage.ContainsKey("subsidiary_ledger_txtAccount") And
+            Form1.FieldStorage.ContainsKey("subsidiary_ledger_txtAccountName") And
+            Form1.FieldStorage.ContainsKey("subsidiary_ledger_txtSubsi") Then
+
+            cmbSubsi.SelectedIndex = Form1.FieldStorage("subsidiary_ledger_cmbSubsi")
+            cmbFormat.SelectedIndex = Form1.FieldStorage("subsidiary_ledger_cmbFormat")
+            cmbField.SelectedIndex = Form1.FieldStorage("subsidiary_ledger_cmbField")
+            dtDateFrom.Value = Form1.FieldStorage("subsidiary_ledger_dtDateFrom")
+            dtDateTo.Value = Form1.FieldStorage("subsidiary_ledger_dtDateTo")
+            txtAccount.Text = Form1.FieldStorage("subsidiary_ledger_txtAccount")
+            txtAccountName.Text = Form1.FieldStorage("subsidiary_ledger_txtAccountName")
+            txtSubsi.Text = Form1.FieldStorage("subsidiary_ledger_txtSubsi")
+        Else
+            cmbSubsi.SelectedIndex = 0
+            cmbFormat.SelectedIndex = 0
+            cmbField.SelectedIndex = 0
+        End If
+
+      
     End Sub
 
     Private Sub cmbSubsi_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSubsi.SelectedIndexChanged
@@ -111,6 +133,7 @@
     End Sub
 
     Sub HandleApiResponse(dt As DataTable)
+        StoredFields()
         Form1.HideLoading()
         If (dt.Rows.Count <= 0) Then
             MsgBox("No Record Found!")
@@ -132,6 +155,17 @@
             Form1.CrystalReportViewer1.ReportSource = rpt
             Me.ParentForm.Close()
         End If
+    End Sub
+
+    Sub StoredFields()
+        Form1.FieldStorage("subsidiary_ledger_cmbSubsi") = cmbSubsi.SelectedIndex
+        Form1.FieldStorage("subsidiary_ledger_cmbFormat") = cmbFormat.SelectedIndex
+        Form1.FieldStorage("subsidiary_ledger_cmbField") = cmbField.SelectedIndex
+        Form1.FieldStorage("subsidiary_ledger_dtDateFrom") = dtDateFrom.Value
+        Form1.FieldStorage("subsidiary_ledger_dtDateTo") = dtDateTo.Value
+        Form1.FieldStorage("subsidiary_ledger_txtAccount") = txtAccount.Text
+        Form1.FieldStorage("subsidiary_ledger_txtAccountName") = txtAccountName.Text
+        Form1.FieldStorage("subsidiary_ledger_txtSubsi") = txtSubsi.Text
     End Sub
 
 

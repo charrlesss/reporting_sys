@@ -3,7 +3,7 @@
     Public sReport As String = "Cash Disbursement Book"
 
     Private Sub ReportTitle()
-        txtReportTitle.Text = "UPWARD MANAGEMENT INSURANCE SERVICES " & IIf(cmbSubAcct.Text = "ALL", "", "(" & cmbSubAcct.Text & ")") & vbCrLf &
+        txtReportTitle.Text = Form1.ReportTitleByDepartment & IIf(cmbSubAcct.Text = "ALL", "", "(" & cmbSubAcct.Text & ")") & vbCrLf &
                         cmbReport.Text & " " & sReport & IIf(cmbFormat.SelectedIndex = 0, "", " Summary") & vbCrLf & _
                          dtDate.Text
     End Sub
@@ -33,11 +33,29 @@
         cmbOrder.Items.Add("Ascending")
         cmbOrder.Items.Add("Descending")
 
-        cmbFormat.SelectedIndex = 0
-        cmbReport.SelectedIndex = 1
-        cmbSubAcct.SelectedIndex = 0
-        cmbSort.SelectedIndex = 0
-        cmbOrder.SelectedIndex = 0
+        If Form1.FieldStorage.ContainsKey("cash_disbursement_cmbFormat") And
+            Form1.FieldStorage.ContainsKey("cash_disbursement_cmbReport") And
+            Form1.FieldStorage.ContainsKey("cash_disbursement_cmbSubAcct") And
+            Form1.FieldStorage.ContainsKey("cash_disbursement_cmbSort") And
+            Form1.FieldStorage.ContainsKey("cash_disbursement_cmbOrder") And
+            Form1.FieldStorage.ContainsKey("cash_disbursement_dtDate") Then
+
+            cmbFormat.SelectedIndex = Form1.FieldStorage("cash_disbursement_cmbFormat")
+            cmbReport.SelectedIndex = Form1.FieldStorage("cash_disbursement_cmbReport")
+            cmbSubAcct.SelectedIndex = Form1.FieldStorage("cash_disbursement_cmbSubAcct")
+            cmbSort.SelectedIndex = Form1.FieldStorage("cash_disbursement_cmbSort")
+            cmbOrder.SelectedIndex = Form1.FieldStorage("cash_disbursement_cmbOrder")
+            dtDate.Value = Form1.FieldStorage("cash_disbursement_dtDate")
+
+        Else
+            cmbFormat.SelectedIndex = 0
+            cmbReport.SelectedIndex = 1
+            cmbSubAcct.SelectedIndex = 0
+            cmbSort.SelectedIndex = 0
+            cmbOrder.SelectedIndex = 0
+        End If
+
+        ReportTitle()
     End Sub
 
     Private Sub cmbReport_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbReport.SelectedIndexChanged
@@ -85,6 +103,7 @@
         Form1.PostReportWithSummaryApi("/reports/accounting/cash-disbursement-book-cdb-desk", postData, AddressOf HandleApiResponse)
     End Sub
     Sub HandleApiResponse(dt As DataTable, dtSummary As DataTable)
+        StoredFields()
         Form1.HideLoading()
         If (dt.Rows.Count <= 0 And dtSummary.Rows.Count <= 0) Then
             MsgBox("No Record Found!")
@@ -99,5 +118,14 @@
         Form1.CrystalReportViewer1.Refresh()
         Form1.CrystalReportViewer1.ReportSource = rpt
         Me.ParentForm.Close()
+    End Sub
+
+    Sub StoredFields()
+        Form1.FieldStorage("cash_disbursement_cmbFormat") = cmbFormat.SelectedIndex
+        Form1.FieldStorage("cash_disbursement_cmbReport") = cmbReport.SelectedIndex
+        Form1.FieldStorage("cash_disbursement_cmbSubAcct") = cmbSubAcct.SelectedIndex
+        Form1.FieldStorage("cash_disbursement_cmbSort") = cmbSort.SelectedIndex
+        Form1.FieldStorage("cash_disbursement_cmbOrder") = cmbOrder.SelectedIndex
+        Form1.FieldStorage("cash_disbursement_dtDate") = dtDate.Value
     End Sub
 End Class

@@ -2,7 +2,7 @@
     Dim dt As DataTable
     Public sReport As String = "Trial Balance"
     Private Sub ReportTitle()
-        txtReportTitle.Text = "UPWARD MANAGEMENT INSURANCE SERVICES " & IIf(cmbSubAcct.Text = "ALL", "", "(" & cmbSubAcct.Text & ")") & vbCrLf & _
+        txtReportTitle.Text = Form1.ReportTitleByDepartment & IIf(cmbSubAcct.Text = "ALL", "", "(" & cmbSubAcct.Text & ")") & vbCrLf & _
                          cmbReport.Text & " " & sReport & IIf(cmbFormat.SelectedIndex = 1, " (Per Revenue Center)", "") & vbCrLf & _
                          dtDate.Text
     End Sub
@@ -23,10 +23,24 @@
     Private Sub frmTrialBalance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadSubAccounts()
 
-        cmbFormat.SelectedIndex = 0
-        cmbReport.SelectedIndex = 1
-        cmbSubAcct.SelectedIndex = 0
-        If cmbAccount.Enabled Then cmbAccount.SelectedIndex = 0
+        If Form1.FieldStorage.ContainsKey("trial_balance_cmbFormat") And
+            Form1.FieldStorage.ContainsKey("trial_balance_cmbReport") And
+            Form1.FieldStorage.ContainsKey("trial_balance_cmbSubAcct") And
+            Form1.FieldStorage.ContainsKey("trial_balance_cmbAccount") And
+            Form1.FieldStorage.ContainsKey("trial_balance_dtDate") Then
+
+            cmbFormat.SelectedIndex = Form1.FieldStorage("trial_balance_cmbFormat")
+            cmbReport.SelectedIndex = Form1.FieldStorage("trial_balance_cmbReport")
+            cmbSubAcct.SelectedIndex = Form1.FieldStorage("trial_balance_cmbSubAcct")
+            cmbAccount.SelectedIndex = Form1.FieldStorage("trial_balance_cmbAccount")
+            dtDate.Value = Form1.FieldStorage("trial_balance_dtDate")
+        Else
+            cmbFormat.SelectedIndex = 0
+            cmbReport.SelectedIndex = 1
+            cmbSubAcct.SelectedIndex = 0
+            If cmbAccount.Enabled Then cmbAccount.SelectedIndex = 0
+        End If
+     
         dtDate.Value = Now
 
         ReportTitle()
@@ -79,6 +93,7 @@
     End Sub
 
     Sub HandleApiResponse(dt As DataTable)
+        StoredFields()
         Form1.HideLoading()
         If (dt.Rows.Count <= 0) Then
             MsgBox("No Record Found!")
@@ -101,5 +116,13 @@
             Me.ParentForm.Close()
         End If
 
+    End Sub
+
+    Sub StoredFields()
+        Form1.FieldStorage("trial_balance_cmbFormat") = cmbFormat.SelectedIndex
+        Form1.FieldStorage("trial_balance_cmbReport") = cmbReport.SelectedIndex
+        Form1.FieldStorage("trial_balance_cmbSubAcct") = cmbSubAcct.SelectedIndex
+        Form1.FieldStorage("trial_balance_cmbAccount") = cmbAccount.SelectedIndex
+        Form1.FieldStorage("trial_balance_dtDate") = dtDate.Value
     End Sub
 End Class

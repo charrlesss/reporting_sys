@@ -4,11 +4,11 @@
     Private Sub ReportTitle()
         Select Case cmbReport.Text
             Case "GL Account (Detailed)"
-                txtReportTitle.Text = "UPWARD MANAGEMENT INSURANCE SERVICES " & IIf(txtSubsi.Text.Trim = "" Or txtSubsi.Text.Trim = "ALL", "", "(" & txtSubsi.Text.Trim & ")") & vbCrLf & _
+                txtReportTitle.Text = Form1.ReportTitleByDepartment & IIf(txtSubsi.Text.Trim = "" Or txtSubsi.Text.Trim = "ALL", "", "(" & txtSubsi.Text.Trim & ")") & vbCrLf & _
                                       "Schedule of " & txtAccountName.Text.Trim & IIf(cmbInsurance.SelectedIndex = 2, " - " & cmbInsurance.Text, "") & " (" & txtAccount.Text.Trim & ")" & vbCrLf & _
                                       dtDate.Text
             Case "All Accounts"
-                txtReportTitle.Text = "UPWARD MANAGEMENT INSURANCE SERVICES " & IIf(txtSubsi.Text.Trim = "" Or txtSubsi.Text.Trim = "ALL", "", "(" & txtSubsi.Text.Trim & ")") & vbCrLf & _
+                txtReportTitle.Text = Form1.ReportTitleByDepartment & IIf(txtSubsi.Text.Trim = "" Or txtSubsi.Text.Trim = "ALL", "", "(" & txtSubsi.Text.Trim & ")") & vbCrLf & _
                                       "Schedule of Accounts" & vbCrLf & _
                                       dtDate.Text
         End Select
@@ -46,12 +46,38 @@
 
 
     Private Sub frmScheduleAccount_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cmbReport.SelectedIndex = 0
         LoadSubsidiary()
         LoadAccounts()
-        cmbSubsi.SelectedIndex = 0
-        cmbSort.SelectedIndex = 0
-        cmbOrder.SelectedIndex = 0
+
+
+        If Form1.FieldStorage.ContainsKey("schedule_account_cmbReport") And
+            Form1.FieldStorage.ContainsKey("schedule_account_cmbSubsi") And
+            Form1.FieldStorage.ContainsKey("schedule_account_cmbInsurance") And
+            Form1.FieldStorage.ContainsKey("schedule_account_cmbSort") And
+            Form1.FieldStorage.ContainsKey("schedule_account_cmbOrder") And
+            Form1.FieldStorage.ContainsKey("schedule_account_dtDate") And
+            Form1.FieldStorage.ContainsKey("schedule_account_txtAccount") And
+            Form1.FieldStorage.ContainsKey("schedule_account_txtAccountName") Then
+
+            cmbReport.SelectedIndex = Form1.FieldStorage("schedule_account_cmbReport")
+            LoadSubsidiary()
+            cmbSubsi.SelectedIndex = Form1.FieldStorage("schedule_account_cmbSubsi")
+            cmbInsurance.SelectedIndex = Form1.FieldStorage("schedule_account_cmbInsurance")
+            cmbSort.SelectedIndex = Form1.FieldStorage("schedule_account_cmbSort")
+            cmbOrder.SelectedIndex = Form1.FieldStorage("schedule_account_cmbOrder")
+            dtDate.Value = Form1.FieldStorage("schedule_account_dtDate")
+            txtAccount.Text = Form1.FieldStorage("schedule_account_txtAccount")
+            txtAccountName.Text = Form1.FieldStorage("schedule_account_txtAccountName")
+        Else
+            cmbReport.SelectedIndex = 0
+            LoadSubsidiary()
+            cmbSubsi.SelectedIndex = 0
+            cmbSort.SelectedIndex = 0
+            cmbOrder.SelectedIndex = 0
+        End If
+
+
+    
 
     End Sub
 
@@ -143,6 +169,7 @@
         Form1.PostReportApi("/reports/accounting/schedule-account-report-desk", postData, AddressOf HandleApiResponse)
     End Sub
     Private Sub HandleApiResponse(dt As DataTable)
+        StoredFields()
         Form1.HideLoading()
         If (dt.Rows.Count <= 0) Then
             MsgBox("No Record Found!")
@@ -230,4 +257,19 @@
     Private Sub dtDate_ValueChanged(sender As Object, e As EventArgs) Handles dtDate.ValueChanged
         ReportTitle()
     End Sub
+
+    Sub StoredFields()
+        Form1.FieldStorage("schedule_account_cmbReport") = cmbReport.SelectedIndex
+        Form1.FieldStorage("schedule_account_cmbSubsi") = cmbSubsi.SelectedIndex
+        Form1.FieldStorage("schedule_account_cmbInsurance") = cmbInsurance.SelectedIndex
+        Form1.FieldStorage("schedule_account_cmbSort") = cmbSort.SelectedIndex
+        Form1.FieldStorage("schedule_account_cmbOrder") = cmbOrder.SelectedIndex
+        Form1.FieldStorage("schedule_account_dtDate") = dtDate.Value
+        Form1.FieldStorage("schedule_account_txtAccount") = txtAccount.Text
+        Form1.FieldStorage("schedule_account_txtAccountName") = txtAccountName.Text
+
+    End Sub
+
+
+
 End Class

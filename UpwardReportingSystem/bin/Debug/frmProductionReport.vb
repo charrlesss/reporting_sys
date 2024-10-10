@@ -4,24 +4,23 @@
 
 
     Private Sub ReportTitle()
-        txtReportTitle.Text = "UPWARD MANAGEMENT INSURANCE SERVICES " & IIf(sReport = "Production Report", IIf(cmbType.SelectedIndex = 0, "", "(Financed)"), IIf(cmbSubAcct.Text = "ALL", "", "(" & cmbSubAcct.Text & ")")) & vbCrLf & _
+        txtReportTitle.Text = Form1.ReportTitleByDepartment & IIf(sReport = "Production Report", IIf(cmbType.SelectedIndex = 0, "", "(Financed)"), IIf(cmbSubAcct.Text = "ALL", "", "(" & cmbSubAcct.Text & ")")) & vbCrLf & _
                          cmbReport.Text & " " & sReport & IIf(sReport <> "Production Report", "", " (" & IIf(Microsoft.VisualBasic.Left(cmbSubAcct.Text, 1) = "G", "Bonds", cmbSubAcct.Text) & " - " & cmbOrder.Text & ")") & IIf(cmbFormat.SelectedIndex = 0, "", " Summary") & vbCrLf & _
                          IIf(sReport <> "Production Report", "", "Cut off Date: ") & dtDate.Text
     End Sub
 
     Sub getAccounts(dt As DataTable)
         If dt.Rows.Count > 0 Then
-            cmbSubAcct.Items.Add("ALL")
+            cmbOrder.Items.Add("ALL")
             For i As Integer = 0 To dt.Rows.Count - 1
-                cmbSubAcct.Items.Add(dt(i)("Account").ToString)
+                cmbOrder.Items.Add(dt(i)("Account").ToString)
             Next
         End If
     End Sub
     Sub getTypes(dt As DataTable)
         If dt.Rows.Count > 0 Then
-            cmbOrder.Items.Add("ALL")
             For i As Integer = 0 To dt.Rows.Count - 1
-                cmbOrder.Items.Add(dt(i)("PolicyType").ToString)
+                cmbSubAcct.Items.Add(dt(i)("PolicyType").ToString)
             Next
         End If
     End Sub
@@ -63,12 +62,44 @@
 
         lblPolicy.Visible = True
         cmbpolicy.Visible = True
-        cmbpolicy.SelectedIndex = 0
-        cmbSubAcct.SelectedIndex = 0
-        cmbFormat.SelectedIndex = 0
-        cmbOrder.SelectedIndex = 0
-        cmbSort.SelectedIndex = 0
-        cmbReport.SelectedIndex = 1
+
+        If Form1.FieldStorage.ContainsKey("production_report_cmbFormat") And
+            Form1.FieldStorage.ContainsKey("production_report_cmbType") And
+            Form1.FieldStorage.ContainsKey("production_report_cmbReport") And
+            Form1.FieldStorage.ContainsKey("production_report_numYear") And
+            Form1.FieldStorage.ContainsKey("production_report_cmbSubAcct") And
+            Form1.FieldStorage.ContainsKey("production_report_dtDate") And
+            Form1.FieldStorage.ContainsKey("production_report_cmbpolicy") And
+            Form1.FieldStorage.ContainsKey("production_report_cmbSort") And
+            Form1.FieldStorage.ContainsKey("production_report_cmbOrder") And
+            Form1.FieldStorage.ContainsKey("production_report_cmbFormat") And
+            Form1.FieldStorage.ContainsKey("production_report_cmbType") And
+            Form1.FieldStorage.ContainsKey("production_report_cmbReport") And
+            Form1.FieldStorage.ContainsKey("production_report_numYear") And
+            Form1.FieldStorage.ContainsKey("production_report_cmbSubAcct") And
+            Form1.FieldStorage.ContainsKey("production_report_dtDate") And
+            Form1.FieldStorage.ContainsKey("production_report_cmbpolicy") And
+            Form1.FieldStorage.ContainsKey("production_report_cmbSort") And
+            Form1.FieldStorage.ContainsKey("production_report_cmbOrder") Then
+
+            cmbFormat.SelectedIndex = Form1.FieldStorage("production_report_cmbFormat")
+            cmbType.SelectedIndex = Form1.FieldStorage("production_report_cmbType")
+            cmbReport.SelectedIndex = Form1.FieldStorage("production_report_cmbReport")
+            numYear.Value = Form1.FieldStorage("production_report_numYear")
+            cmbSubAcct.SelectedIndex = Form1.FieldStorage("production_report_cmbSubAcct")
+            dtDate.Value = Form1.FieldStorage("production_report_dtDate")
+            cmbpolicy.SelectedIndex = Form1.FieldStorage("production_report_cmbpolicy")
+            cmbSort.SelectedIndex = Form1.FieldStorage("production_report_cmbSort")
+            cmbOrder.SelectedIndex = Form1.FieldStorage("production_report_cmbOrder")
+        Else
+            cmbpolicy.SelectedIndex = 0
+            cmbSubAcct.SelectedIndex = 0
+            cmbFormat.SelectedIndex = 0
+            cmbOrder.SelectedIndex = 0
+            cmbSort.SelectedIndex = 0
+            cmbReport.SelectedIndex = 1
+        End If
+
     End Sub
 
     Private Sub cmbReport_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbReport.SelectedIndexChanged
@@ -112,10 +143,10 @@
         Dim TDate As Date
 
         If cmbReport.Text = "Monthly" Then
-            FDate = Format(dtDate.Value.Date, "MM/01/yyyy")
+            FDate = Format(dtDate.Value.Date, "01/MM/yyyy")
             TDate = GetMonthLastDay(dtDate.Value.Date)
         ElseIf cmbReport.Text = "Yearly" Then
-            FDate = Format(DateAdd(DateInterval.Year, (numYear.Value * -1), dtDate.Value.Date), "MM/01/yyyy")
+            FDate = Format(DateAdd(DateInterval.Year, (numYear.Value * -1), dtDate.Value.Date), "01/MM/yyyy")
             TDate = GetMonthLastDay(dtDate.Value.Date)
         Else
             FDate = dtDate.Value.Date
@@ -133,10 +164,11 @@
            {"cmbSort", cmbSort.Text}
        }
 
-        Form1.PostReportApi("/reports/reports/renewal-notice", postData, AddressOf HandleApiResponse)
+        Form1.PostReportApi("/reports/reports/get-production-report-desk", postData, AddressOf HandleApiResponse)
     End Sub
 
     Sub HandleApiResponse(dt As DataTable)
+        StoredFields()
         Form1.HideLoading()
         If (dt.Rows.Count <= 0) Then
             MsgBox("No Record Found!")
@@ -189,12 +221,14 @@
     End Sub
 
     Sub StoredFields()
-
-        'Form1.FieldStorage("dtDate") = dtDate.Value
-        ' Form1.FieldStorage("cmbReport") = cmbReport.SelectedIndex
-        ' Form1.FieldStorage("cmbFormat") = cmbFormat.SelectedIndex
-        ' Form1.FieldStorage("cmbSubAcct") = cmbSubAcct.SelectedIndex
-        ' Form1.FieldStorage("cmbpolicy") = cmbpolicy.SelectedIndex
-
+        Form1.FieldStorage("production_report_cmbFormat") = cmbFormat.SelectedIndex
+        Form1.FieldStorage("production_report_cmbType") = cmbType.SelectedIndex
+        Form1.FieldStorage("production_report_cmbReport") = cmbReport.SelectedIndex
+        Form1.FieldStorage("production_report_numYear") = numYear.Value
+        Form1.FieldStorage("production_report_cmbSubAcct") = cmbSubAcct.SelectedIndex
+        Form1.FieldStorage("production_report_dtDate") = dtDate.Value
+        Form1.FieldStorage("production_report_cmbpolicy") = cmbpolicy.SelectedIndex
+        Form1.FieldStorage("production_report_cmbSort") = cmbSort.SelectedIndex
+        Form1.FieldStorage("production_report_cmbOrder") = cmbOrder.SelectedIndex
     End Sub
 End Class

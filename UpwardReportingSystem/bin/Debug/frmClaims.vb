@@ -1,10 +1,13 @@
 ﻿Public Class frmClaims
     Private Sub ReportTitle()
-        txtReportTitle.Text = "UPWARD MANAGEMENT INSURANCE SERVICES " & vbCrLf &
+        txtReportTitle.Text = Form1.ReportTitleByDepartment & vbCrLf &
                         IIf(cmbReport.SelectedIndex = 0, "Daily ", IIf(cmbReport.SelectedIndex = 1, "Monthly ", "")) & "Claims Report" & vbCrLf &
                        IIf(cmbReport.SelectedIndex = 2, "From " & dtDateFrom.Text & " To " & dtDateTo.Text, dtDateFrom.Text)
     End Sub
     Sub FieldToShow()
+     
+     
+
         If cmbFormat.SelectedIndex = 4 Then
             lblReport.Visible = False
             lblStatus.Visible = False
@@ -20,16 +23,32 @@
             txtPolicyNo.Visible = False
             txtAssuredName.Visible = False
 
+
+            dtDateFrom.Visible = True
+            lblDateFrom.Visible = True
+
             dtDateTo.Visible = True
             lblDateTo.Visible = True
+
+            dtDateFrom.Top = dtDateFrom.Top - 25
+            lblDateFrom.Top = lblDateFrom.Top - 25
+
+
+            dtDateTo.Top = dtDateTo.Top - 25
+            lblDateTo.Top = lblDateTo.Top - 25
+
+            dtDateFrom.Format = DateTimePickerFormat.Custom
+            dtDateFrom.CustomFormat = "MMMM dd, yyyy"
+            dtDateFrom.ShowUpDown = False
+            btnSearch.Visible = True
 
         ElseIf cmbFormat.SelectedIndex = 5 Then
             lblReport.Visible = False
             lblStatus.Visible = False
-
+            lblDateFrom.Visible = False
             cmbStatus.Visible = False
             cmbReport.Visible = False
-
+            dtDateFrom.Visible = False
 
             lblClaimType.Visible = False
             cmbClaimType.Visible = False
@@ -40,8 +59,10 @@
             txtPolicyNo.Visible = True
             txtAssuredName.Visible = True
 
-            dtDateTo.Visible = True
-            lblDateTo.Visible = True
+            dtDateTo.Visible = False
+            lblDateTo.Visible = False
+            btnSearch.Visible = False
+
 
         Else
             lblReport.Visible = True
@@ -59,6 +80,27 @@
             lblAssuredName.Visible = False
             txtPolicyNo.Visible = False
             txtAssuredName.Visible = False
+            btnSearch.Visible = False
+
+            dtDateTo.Visible = False
+            lblDateTo.Visible = False
+
+            dtDateFrom.Top = 198
+            lblDateFrom.Top = 198
+
+
+            dtDateTo.Top = 198 + 25
+            lblDateTo.Top = 198 + 25
+
+            If cmbReport.Text = "Monthly" Then
+                dtDateFrom.Format = DateTimePickerFormat.Custom
+                dtDateFrom.CustomFormat = "MMMM yyyy"
+                dtDateFrom.ShowUpDown = True
+            Else
+                dtDateFrom.Format = DateTimePickerFormat.Custom
+                dtDateFrom.CustomFormat = "MMMM dd, yyyy"
+                dtDateFrom.ShowUpDown = False
+            End If
 
         End If
     End Sub
@@ -75,10 +117,34 @@
     End Sub
 
     Private Sub frmClaims_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cmbStatus.SelectedIndex = 0
-        cmbFormat.SelectedIndex = 0
-        cmbReport.SelectedIndex = 1
-        cmbClaimType.SelectedIndex = 0
+        btnSearch.Visible = False
+
+
+        If Form1.FieldStorage.ContainsKey("claims_cmbFormat") And
+         Form1.FieldStorage.ContainsKey("claims_txtPolicyNo") And
+         Form1.FieldStorage.ContainsKey("claims_txtAssuredName") And
+         Form1.FieldStorage.ContainsKey("claims_dtDateFrom") And
+         Form1.FieldStorage.ContainsKey("claims_dtDateTo") And
+         Form1.FieldStorage.ContainsKey("claims_cmbStatus") And
+         Form1.FieldStorage.ContainsKey("claims_cmbReport") And
+         Form1.FieldStorage.ContainsKey("claims_cmbClaimType") Then
+
+            cmbFormat.SelectedIndex = Form1.FieldStorage("claims_cmbFormat")
+            txtPolicyNo.Text = Form1.FieldStorage("claims_txtPolicyNo")
+            txtAssuredName.Text = Form1.FieldStorage("claims_txtAssuredName")
+            dtDateFrom.Value = Form1.FieldStorage("claims_dtDateFrom")
+            dtDateTo.Value = Form1.FieldStorage("claims_dtDateTo")
+            cmbStatus.SelectedIndex = Form1.FieldStorage("claims_cmbStatus")
+            cmbReport.SelectedIndex = Form1.FieldStorage("claims_cmbReport")
+            cmbClaimType.SelectedIndex = Form1.FieldStorage("claims_cmbClaimType")
+        Else
+            cmbStatus.SelectedIndex = 0
+            cmbFormat.SelectedIndex = 0
+            cmbReport.SelectedIndex = 1
+            cmbClaimType.SelectedIndex = 0
+        End If
+
+     
 
         ReportTitle()
         showDateTo()
@@ -118,8 +184,8 @@
            {"status", cmbStatus.SelectedIndex},
            {"format", cmbFormat.SelectedIndex},
            {"report", cmbReport.SelectedIndex},
-            {"claim_type", cmbReport.SelectedIndex},
-            {"PolicyNo", cmbReport.SelectedIndex}
+           {"claim_type", cmbReport.SelectedIndex},
+           {"PolicyNo", txtPolicyNo.Text}
        }
         Form1.PostReportApi("/task/claims/claims/report-claim-desk", postData, AddressOf HandleApiResponse)
     End Sub
@@ -145,12 +211,14 @@
     End Sub
 
     Sub StoredFields()
-
-        'Form1.FieldStorage("dtDate") = dtDate.Value
-        ' Form1.FieldStorage("cmbReport") = cmbReport.SelectedIndex
-        ' Form1.FieldStorage("cmbFormat") = cmbFormat.SelectedIndex
-        ' Form1.FieldStorage("cmbSubAcct") = cmbSubAcct.SelectedIndex
-        ' Form1.FieldStorage("cmbpolicy") = cmbpolicy.SelectedIndex
+        Form1.FieldStorage("claims_cmbFormat") = cmbFormat.SelectedIndex
+        Form1.FieldStorage("claims_txtPolicyNo") = txtPolicyNo.Text
+        Form1.FieldStorage("claims_txtAssuredName") = txtAssuredName.Text
+        Form1.FieldStorage("claims_dtDateFrom") = dtDateFrom.Value
+        Form1.FieldStorage("claims_dtDateTo") = dtDateTo.Value
+        Form1.FieldStorage("claims_cmbStatus") = cmbStatus.SelectedIndex
+        Form1.FieldStorage("claims_cmbReport") = cmbReport.SelectedIndex
+        Form1.FieldStorage("claims_cmbClaimType") = cmbClaimType.SelectedIndex
     End Sub
 
     Private Sub cmbFormat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbFormat.SelectedIndexChanged
@@ -159,5 +227,27 @@
 
     Private Sub txtReportTitle_TextChanged(sender As Object, e As EventArgs) Handles txtReportTitle.TextChanged
         ReportTitle()
+    End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        Dim frmMSearch As New frmSearch
+
+        If frmMSearch.Search("Policy", txtPolicyNo.Text.Trim) Then
+            txtPolicyNo.Text = frmMSearch.RetVal1
+            txtAssuredName.Text = frmMSearch.RetVal2
+        End If
+    End Sub
+
+   
+ 
+    Private Sub txtPolicyNo_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPolicyNo.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Dim frmMSearch As New frmSearch
+
+            If frmMSearch.Search("Policy", txtPolicyNo.Text.Trim) Then
+                txtPolicyNo.Text = frmMSearch.RetVal1
+                txtAssuredName.Text = frmMSearch.RetVal2
+            End If
+        End If
     End Sub
 End Class

@@ -3,7 +3,7 @@
     Dim dt As DataTable
     Public sReport As String = "Deposited Collections"
     Private Sub ReportTitle()
-        txtReportTitle.Text = "UPWARD MANAGEMENT INSURANCE SERVICES " & vbCrLf & _
+        txtReportTitle.Text = Form1.ReportTitleByDepartment & vbCrLf & _
                          cmbReport.Text & " " & sReport & vbCrLf & dtDate.Text
 
 
@@ -47,11 +47,31 @@
     Private Sub frmDepositCollection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadControls()
 
-        cmbFormat.SelectedIndex = 0
-        cmbReport.SelectedIndex = 1
-        cmbSubAcct.SelectedIndex = 0
-        cmbOrder.SelectedIndex = 0
-        cmbSort.SelectedIndex = 0
+
+
+        If Form1.FieldStorage.ContainsKey("abstract_collection_cmbFormat") And
+        Form1.FieldStorage.ContainsKey("abstract_collection_cmbReport") And
+        Form1.FieldStorage.ContainsKey("abstract_collection_cmbSubAcct") And
+        Form1.FieldStorage.ContainsKey("abstract_collection_dtDate") And
+        Form1.FieldStorage.ContainsKey("abstract_collection_cmbpolicy") And
+        Form1.FieldStorage.ContainsKey("abstract_collection_cmbOrder") And
+        Form1.FieldStorage.ContainsKey("abstract_collection_cmbSort") Then
+
+            cmbFormat.SelectedIndex = Form1.FieldStorage("abstract_collection_cmbFormat")
+            cmbReport.SelectedIndex = Form1.FieldStorage("abstract_collection_cmbReport")
+            cmbSubAcct.SelectedIndex = Form1.FieldStorage("abstract_collection_cmbSubAcct")
+            dtDate.Value = Form1.FieldStorage("abstract_collection_dtDate")
+            cmbOrder.SelectedIndex = Form1.FieldStorage("abstract_collection_cmbOrder")
+            cmbSort.SelectedIndex = Form1.FieldStorage("abstract_collection_cmbSort")
+        Else
+            cmbFormat.SelectedIndex = 0
+            cmbReport.SelectedIndex = 1
+            cmbSubAcct.SelectedIndex = 0
+            cmbOrder.SelectedIndex = 0
+            cmbSort.SelectedIndex = 0
+        End If
+
+        ReportTitle()
     End Sub
 
 
@@ -100,6 +120,7 @@
         Form1.PostReportWithSummaryApi("/reports/accounting/deposited-collection-report-desk", postData, AddressOf HandleApiResponse)
     End Sub
     Sub HandleApiResponse(dt As DataTable, dtSummary As DataTable)
+        StoredFields()
         Form1.HideLoading()
         If (dt.Rows.Count <= 0 And dtSummary.Rows.Count <= 0) Then
             MsgBox("No Record Found!")
@@ -115,4 +136,18 @@
         Form1.CrystalReportViewer1.ReportSource = rpt
         Me.ParentForm.Close()
     End Sub
+
+    Sub StoredFields()
+
+        Form1.FieldStorage("abstract_collection_cmbFormat") = cmbFormat.SelectedIndex
+        Form1.FieldStorage("abstract_collection_cmbReport") = cmbReport.SelectedIndex
+        Form1.FieldStorage("abstract_collection_cmbSubAcct") = cmbSubAcct.SelectedIndex
+        Form1.FieldStorage("abstract_collection_dtDate") = dtDate.Value
+        Form1.FieldStorage("abstract_collection_cmbpolicy") = cmbpolicy.SelectedIndex
+        Form1.FieldStorage("abstract_collection_cmbOrder") = cmbOrder.SelectedIndex
+        Form1.FieldStorage("abstract_collection_cmbSort") = cmbSort.SelectedIndex
+    End Sub
+
+          
+
 End Class

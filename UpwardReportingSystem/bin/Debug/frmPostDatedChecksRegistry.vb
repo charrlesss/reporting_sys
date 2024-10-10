@@ -2,7 +2,7 @@
     Dim dt As DataTable
 
     Private Sub ReportTitle()
-        txtReportTitle.Text = "UPWARD MANAGEMENT INSURANCE SERVICES " & IIf(cmbPDCBranch.Text = "ALL", "", "(" & cmbPDCBranch.Text & ")") & vbCrLf & _
+        txtReportTitle.Text = Form1.ReportTitleByDepartment & IIf(cmbPDCBranch.Text = "ALL", "", "(" & cmbPDCBranch.Text & ")") & vbCrLf & _
                          "Post Dated Checks Registered" & vbCrLf & _
                          "From " & Format(dtDateFrom.Value.ToString("MM/dd/yyyy")) & " to " & Format(dtDateTo.Value.ToString("MM/dd/yyyy"))
 
@@ -43,17 +43,38 @@
         cmbOrder.Items.Add("Ascending")
         cmbOrder.Items.Add("Descending")
 
-        cmbPDCFormat.SelectedIndex = 0
-        cmbPDCField.SelectedIndex = 0
-        cmbPDCBranch.SelectedIndex = 0
-        cmbSort.SelectedIndex = 0
-        cmbOrder.SelectedIndex = 0
-        cmbType.SelectedIndex = 0
+       
     End Sub
 
 
     Private Sub frmPostDatedChecksRegistry_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadControls()
+        If Form1.FieldStorage.ContainsKey("post_dated_checks_cmbPDCFormat") And
+            Form1.FieldStorage.ContainsKey("post_dated_checks_cmbPDCField") And
+            Form1.FieldStorage.ContainsKey("post_dated_checks_cmbPDCBranch") And
+            Form1.FieldStorage.ContainsKey("post_dated_checks_cmbType") And
+            Form1.FieldStorage.ContainsKey("post_dated_checks_cmbSort") And
+            Form1.FieldStorage.ContainsKey("post_dated_checks_cmbOrder") And
+            Form1.FieldStorage.ContainsKey("post_dated_checks_dtDateFrom") And
+            Form1.FieldStorage.ContainsKey("post_dated_checks_dtDateTo") Then
+
+            cmbPDCFormat.SelectedIndex = Form1.FieldStorage("post_dated_checks_cmbPDCFormat")
+            cmbPDCField.SelectedIndex = Form1.FieldStorage("post_dated_checks_cmbPDCField")
+            cmbPDCBranch.SelectedIndex = Form1.FieldStorage("post_dated_checks_cmbPDCBranch")
+            cmbType.SelectedIndex = Form1.FieldStorage("post_dated_checks_cmbType")
+            cmbSort.SelectedIndex = Form1.FieldStorage("post_dated_checks_cmbSort")
+            cmbOrder.SelectedIndex = Form1.FieldStorage("post_dated_checks_cmbOrder")
+            dtDateFrom.Value = Form1.FieldStorage("post_dated_checks_dtDateFrom")
+            dtDateTo.Value = Form1.FieldStorage("post_dated_checks_dtDateTo")
+        Else
+            cmbPDCFormat.SelectedIndex = 0
+            cmbPDCField.SelectedIndex = 0
+            cmbPDCBranch.SelectedIndex = 0
+            cmbSort.SelectedIndex = 0
+            cmbOrder.SelectedIndex = 0
+            cmbType.SelectedIndex = 0
+        End If
+
 
     End Sub
 
@@ -108,6 +129,7 @@
         Form1.PostReportApi("/reports/accounting/post-dated-check-registered-desk", postData, AddressOf HandleApiResponse)
     End Sub
     Sub HandleApiResponse(dt As DataTable)
+        StoredFields()
         Form1.HideLoading()
         If (dt.Rows.Count <= 0) Then
             MsgBox("No Record Found!")
@@ -138,5 +160,17 @@
 
 
     End Sub
+
+    Sub StoredFields()
+        Form1.FieldStorage("post_dated_checks_cmbPDCFormat") = cmbPDCFormat.SelectedIndex
+        Form1.FieldStorage("post_dated_checks_cmbPDCField") = cmbPDCField.SelectedIndex
+        Form1.FieldStorage("post_dated_checks_cmbPDCBranch") = cmbPDCBranch.SelectedIndex
+        Form1.FieldStorage("post_dated_checks_cmbType") = cmbType.SelectedIndex
+        Form1.FieldStorage("post_dated_checks_cmbSort") = cmbSort.SelectedIndex
+        Form1.FieldStorage("post_dated_checks_cmbOrder") = cmbOrder.SelectedIndex
+        Form1.FieldStorage("post_dated_checks_dtDateFrom") = dtDateFrom.Value
+        Form1.FieldStorage("post_dated_checks_dtDateTo") = dtDateTo.Value
+    End Sub
+
 
 End Class
