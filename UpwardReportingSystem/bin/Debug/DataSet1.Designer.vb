@@ -11066,6 +11066,8 @@ Partial Public Class DataSet1
         
         Private columnAccount As Global.System.Data.DataColumn
         
+        Private columnLocation As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -11142,6 +11144,14 @@ Partial Public Class DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property LocationColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLocation
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -11178,9 +11188,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddRenewalNoticePARow(ByVal AssuredName As String, ByVal PolicyNo As String, ByVal Expiration As String, ByVal TotalPremium As String, ByVal Account As String) As RenewalNoticePARow
+        Public Overloads Function AddRenewalNoticePARow(ByVal AssuredName As String, ByVal PolicyNo As String, ByVal Expiration As String, ByVal TotalPremium As String, ByVal Account As String, ByVal Location As String) As RenewalNoticePARow
             Dim rowRenewalNoticePARow As RenewalNoticePARow = CType(Me.NewRow,RenewalNoticePARow)
-            Dim columnValuesArray() As Object = New Object() {AssuredName, PolicyNo, Expiration, TotalPremium, Account}
+            Dim columnValuesArray() As Object = New Object() {AssuredName, PolicyNo, Expiration, TotalPremium, Account, Location}
             rowRenewalNoticePARow.ItemArray = columnValuesArray
             Me.Rows.Add(rowRenewalNoticePARow)
             Return rowRenewalNoticePARow
@@ -11208,6 +11218,7 @@ Partial Public Class DataSet1
             Me.columnExpiration = MyBase.Columns("Expiration")
             Me.columnTotalPremium = MyBase.Columns("TotalPremium")
             Me.columnAccount = MyBase.Columns("Account")
+            Me.columnLocation = MyBase.Columns("Location")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11223,6 +11234,8 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnTotalPremium)
             Me.columnAccount = New Global.System.Data.DataColumn("Account", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAccount)
+            Me.columnLocation = New Global.System.Data.DataColumn("Location", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLocation)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -20214,6 +20227,21 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Location() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableRenewalNoticePA.LocationColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Location' in table 'RenewalNoticePA' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRenewalNoticePA.LocationColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsAssuredNameNull() As Boolean
             Return Me.IsNull(Me.tableRenewalNoticePA.AssuredNameColumn)
         End Function
@@ -20270,6 +20298,18 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetAccountNull()
             Me(Me.tableRenewalNoticePA.AccountColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsLocationNull() As Boolean
+            Return Me.IsNull(Me.tableRenewalNoticePA.LocationColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetLocationNull()
+            Me(Me.tableRenewalNoticePA.LocationColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

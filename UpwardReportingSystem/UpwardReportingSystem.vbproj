@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -44,6 +59,52 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>UpwardReportingSystem.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>UpwardReportingSystem.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>UpwardReportingSystem.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>UpwardReportingSystem.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -83,6 +144,14 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bin\Debug\DataSet1.Designer.vb">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\DataSet1.vb">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="bin\Debug\DataSet2.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -120,14 +189,6 @@
     </Compile>
     <Compile Include="bin\Debug\frmCashDisbursementBook.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="bin\Debug\DataSet1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="bin\Debug\DataSet1.vb">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="bin\Debug\frmAbstractCollection.Designer.vb">
       <DependentUpon>frmAbstractCollection.vb</DependentUpon>
@@ -642,15 +703,37 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.Form1.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmAbstractCollection.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmAgingAccounts.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmBalanceSheetLong.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmCashDisbursementBook.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmClaims.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmDepositCollection.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmGeneralJournalBook.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmGeneralLedger.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmIncomeStatementLong.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmLoading.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmModal.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmPettyCashFundDisbursement.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmPostDatedChecksRegistry.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmProductionReport.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmRenewalNotice.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmReturnChecks.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmScheduleAccount.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmSearch.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmSubsidiaryLedger.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.frmTrialBalance.resources" />
+    <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.Resources.resources" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="bin\Debug\DataSet1.xsd">
-      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet11.Designer.vb</LastGenOutput>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="bin\Debug\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -669,7 +752,11 @@
     <None Include="bin\Debug\UpwardReportingSystem.exe.config" />
     <None Include="bin\Debug\UpwardReportingSystem.vshost.exe.config" />
     <None Include="bin\Debug\UpwardReportingSystem.vshost.exe.manifest" />
+    <None Include="bin\Debug\vs817F.tmp" />
+    <None Include="bin\Debug\vsB6F0.tmp" />
+    <None Include="bin\x64\Debug\UpwardReportingSystem.exe.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -682,6 +769,9 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\UpwardReportingSystem.vbproj.GenerateResource.Cache" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -690,13 +780,81 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\close-icon.png" />
+    <Content Include="bin\Debug\close.png" />
+    <Content Include="bin\Debug\loading.gif" />
+    <Content Include="bin\Debug\myCloseIcon.png" />
     <Content Include="bin\Debug\Newtonsoft.Json.dll" />
     <Content Include="bin\Debug\Newtonsoft.Json.xml" />
     <Content Include="bin\Debug\UpwardReportingSystem.exe" />
     <Content Include="bin\Debug\UpwardReportingSystem.pdb" />
     <Content Include="bin\Debug\UpwardReportingSystem.vshost.exe" />
     <Content Include="bin\Debug\UpwardReportingSystem.xml" />
+    <Content Include="bin\x64\Debug\UpwardReportingSystem.exe" />
+    <Content Include="bin\x64\Debug\UpwardReportingSystem.pdb" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.DataSet1.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.DataSet11.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.DataSet12.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.DataSet2.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptAbstractOfCollections.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptAging.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptBalanceSheet.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptBalanceSheetSumm.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptBookFormat.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptClaimsReport.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptCRLedger1.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptCRLedger2.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptDepositedCollection.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptGeneralLedger.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptGeneralLedgerSumm.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptIncomeStatement.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptIncomeStatementSumm.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptPDCRegister.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptPettyCashFund.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptProductionBONDS.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptProductionCOM.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptProductionFIRE.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptProductionMAR.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptProductionSUMM.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptProductionTPL.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptRenewalNotice.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptRenewalNoticeFire.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptRenewalNoticeMAR.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptRenewalNoticePA.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptReturnedChecks.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptSchedule_Cont1.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptSchedule_IDNo.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptSchedule_Sub.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptTrialBalance.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.rptTrialBalanceSumm.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.sample.vb.dll" />
+    <Content Include="obj\Debug\TempPE\bin.Debug.userReport.vb.dll" />
+    <Content Include="obj\Debug\TempPE\DataSet1.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\My Project.Resources.Designer.vb.dll" />
+    <Content Include="obj\Debug\TempPE\userReport.vb.dll" />
+    <Content Include="obj\Debug\UpwardReportingSystem.exe" />
+    <Content Include="obj\Debug\UpwardReportingSystem.pdb" />
+    <Content Include="obj\Debug\UpwardReportingSystem.vbproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\UpwardReportingSystem.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

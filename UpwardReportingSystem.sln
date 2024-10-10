@@ -7,14 +7,38 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "UpwardReportingSystem", "Up
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AMD64 = Debug|AMD64
 		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|AMD64 = Release|AMD64
 		Release|Any CPU = Release|Any CPU
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30E1F047-F60C-4031-8207-934785124B5D}.Debug|AMD64.ActiveCfg = Debug|x64
+		{30E1F047-F60C-4031-8207-934785124B5D}.Debug|AMD64.Build.0 = Debug|x64
 		{30E1F047-F60C-4031-8207-934785124B5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{30E1F047-F60C-4031-8207-934785124B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30E1F047-F60C-4031-8207-934785124B5D}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{30E1F047-F60C-4031-8207-934785124B5D}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{30E1F047-F60C-4031-8207-934785124B5D}.Debug|x64.ActiveCfg = Debug|x64
+		{30E1F047-F60C-4031-8207-934785124B5D}.Debug|x64.Build.0 = Debug|x64
+		{30E1F047-F60C-4031-8207-934785124B5D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{30E1F047-F60C-4031-8207-934785124B5D}.Debug|x86.Build.0 = Debug|Any CPU
+		{30E1F047-F60C-4031-8207-934785124B5D}.Release|AMD64.ActiveCfg = Release|Any CPU
+		{30E1F047-F60C-4031-8207-934785124B5D}.Release|AMD64.Build.0 = Release|Any CPU
 		{30E1F047-F60C-4031-8207-934785124B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30E1F047-F60C-4031-8207-934785124B5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30E1F047-F60C-4031-8207-934785124B5D}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{30E1F047-F60C-4031-8207-934785124B5D}.Release|ARM64.Build.0 = Release|Any CPU
+		{30E1F047-F60C-4031-8207-934785124B5D}.Release|x64.ActiveCfg = Release|x64
+		{30E1F047-F60C-4031-8207-934785124B5D}.Release|x64.Build.0 = Release|x64
+		{30E1F047-F60C-4031-8207-934785124B5D}.Release|x86.ActiveCfg = Release|x86
+		{30E1F047-F60C-4031-8207-934785124B5D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
