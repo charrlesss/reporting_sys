@@ -728,10 +728,10 @@
     <EmbeddedResource Include="obj\Debug\UpwardReportingSystem.Resources.resources" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\x64\Debug\UpwardReportingSystem.exe.config" />
-    <None Include="bin\x64\Debug\UpwardReportingSystem.vshost.exe.config" />
-    <None Include="bin\x64\Debug\UpwardReportingSystem.vshost.exe.manifest" />
-    <None Include="bin\x64\Debug\config.ini" />
+    <None Include="bin\x86\Debug\config.ini" />
+    <None Include="bin\x86\Debug\UpwardReportingSystem.exe.config" />
+    <None Include="bin\x86\Debug\UpwardReportingSystem.vshost.exe.config" />
+    <None Include="bin\x86\Debug\UpwardReportingSystem.vshost.exe.manifest" />
     <None Include="Reports\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -793,11 +793,11 @@
     <Content Include="bin\Debug\UpwardReportingSystem.pdb" />
     <Content Include="bin\Debug\UpwardReportingSystem.vshost.exe" />
     <Content Include="bin\Debug\UpwardReportingSystem.xml" />
-    <Content Include="bin\x64\Debug\Newtonsoft.Json.dll" />
-    <Content Include="bin\x64\Debug\UpwardReportingSystem.exe" />
-    <Content Include="bin\x64\Debug\UpwardReportingSystem.pdb" />
-    <Content Include="bin\x64\Debug\UpwardReportingSystem.vshost.exe" />
-    <Content Include="bin\x64\Debug\UpwardReportingSystem.xml" />
+    <Content Include="bin\x86\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\x86\Debug\UpwardReportingSystem.exe" />
+    <Content Include="bin\x86\Debug\UpwardReportingSystem.pdb" />
+    <Content Include="bin\x86\Debug\UpwardReportingSystem.vshost.exe" />
+    <Content Include="bin\x86\Debug\UpwardReportingSystem.xml" />
     <Content Include="obj\Debug\TempPE\bin.Debug.DataSet1.Designer.vb.dll" />
     <Content Include="obj\Debug\TempPE\bin.Debug.DataSet11.Designer.vb.dll" />
     <Content Include="obj\Debug\TempPE\bin.Debug.DataSet12.Designer.vb.dll" />
@@ -860,7 +860,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\x86\Release\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

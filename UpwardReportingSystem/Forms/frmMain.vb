@@ -8,10 +8,7 @@ Imports Newtonsoft.Json.Linq
 Imports CrystalDecisions.CrystalReports.Engine
 Imports CrystalDecisions.Shared
 
-
-
 Public Class frmMain
-
 
     Private loadingForm As frmLoading  ' Declare the loading form
 
@@ -33,6 +30,7 @@ Public Class frmMain
 
 
     Public Sub ShowLoading()
+
         ' Ensure that the loading form is not already open
         If loadingForm Is Nothing OrElse loadingForm.IsDisposed Then
 
@@ -69,10 +67,10 @@ Public Class frmMain
     End Sub
 
     Public Function GetApiData(url As String) As String
+        Console.WriteLine(url)
         ' Create a request to the API
         Dim request As HttpWebRequest = DirectCast(WebRequest.Create(url), HttpWebRequest)
         request.Method = "GET"
-        request.Headers("Authorization") = "Bearer " & ACCESS_TOKEN ' Replace with your access token if required
 
         ' Get the response from the API
         Dim jsonResponse As String = String.Empty
@@ -303,6 +301,7 @@ Public Class frmMain
     Public Delegate Sub CallbackDelegateSummary(dt As DataTable, dtSummary As DataTable)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Dim IniFileName As String = "config.ini"
         Dim FilePath As String = Application.StartupPath & "\" & IniFileName
         Dim ini As New IniFile(FilePath)
@@ -311,6 +310,9 @@ Public Class frmMain
         Dim _domain As String = ini.ReadValue("APIConnectionSetting", "DOMAIN")
         Dim _url As String = ini.ReadValue("APIConnectionSetting", "URL")
 
+        If _domain = "upwardinsurance.net" Then
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
+        End If
         __URL = _url
         __CURL = _domain
 
