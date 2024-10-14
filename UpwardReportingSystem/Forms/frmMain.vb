@@ -12,8 +12,8 @@ Public Class frmMain
 
     Private loadingForm As frmLoading  ' Declare the loading form
 
-    Dim __URL As String = "http://localhost:4400"
-    Dim __CURL As String = "localhost"
+    Dim __URL As String = "https://upwardinsurance.net"
+    Dim __CURL As String = "upwardinsurance.net"
 
     Dim ACCESS_TOKEN As String = ""
     Dim REFRESH_TOKEN As String = ""
@@ -67,10 +67,12 @@ Public Class frmMain
     End Sub
 
     Public Function GetApiData(url As String) As String
+
         Console.WriteLine(url)
         ' Create a request to the API
         Dim request As HttpWebRequest = DirectCast(WebRequest.Create(url), HttpWebRequest)
         request.Method = "GET"
+
 
         ' Get the response from the API
         Dim jsonResponse As String = String.Empty
@@ -124,7 +126,9 @@ Public Class frmMain
 
 
     Public Sub GetReportApi(url As String, callback As CallbackDelegate)
+
         Dim _url As String = __URL & "/api" & url
+        System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
 
         ' Create a request to the API
         Dim request As HttpWebRequest = DirectCast(WebRequest.Create(_url), HttpWebRequest)
@@ -163,6 +167,8 @@ Public Class frmMain
     Public Sub PostReportApi(url As String, postData As Dictionary(Of String, String), callback As CallbackDelegate)
         Dim _url As String = __URL & "/api" & url
 
+        System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
+
         ' Serialize the data object to JSON
         Dim jsonPayload As String = JsonConvert.SerializeObject(postData)
 
@@ -173,6 +179,7 @@ Public Class frmMain
 
         request.ContentType = "application/json"
         request.Headers("Authorization") = "Bearer " & ACCESS_TOKEN
+        addCokie(request)
 
         ' (Cookie setup omitted for brevity)
 
@@ -210,6 +217,8 @@ Public Class frmMain
     Public Sub PostReportWithSummaryApi(url As String, postData As Dictionary(Of String, String), callback As CallbackDelegateSummary)
         Dim _url As String = __URL & "/api" & url
 
+        System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
+
         ' Serialize the data object to JSON
         Dim jsonPayload As String = JsonConvert.SerializeObject(postData)
 
@@ -220,6 +229,7 @@ Public Class frmMain
 
         request.ContentType = "application/json"
         request.Headers("Authorization") = "Bearer " & ACCESS_TOKEN
+        addCokie(request)
 
         ' (Cookie setup omitted for brevity)
 
@@ -263,6 +273,7 @@ Public Class frmMain
     Public Sub GetReportTableApi(url As String, callback As CallbackDelegate)
         Dim _url As String = __URL & "/api" & url
 
+        System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
 
         ' Create a request to the API
         Dim request As HttpWebRequest = DirectCast(WebRequest.Create(_url), HttpWebRequest)
@@ -301,23 +312,26 @@ Public Class frmMain
     Public Delegate Sub CallbackDelegateSummary(dt As DataTable, dtSummary As DataTable)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
 
         Dim IniFileName As String = "config.ini"
         Dim FilePath As String = Application.StartupPath & "\" & IniFileName
         Dim ini As New IniFile(FilePath)
 
         ' Read values from the INI file
-        Dim _domain As String = ini.ReadValue("APIConnectionSetting", "DOMAIN")
-        Dim _url As String = ini.ReadValue("APIConnectionSetting", "URL")
+        Dim _domain As String = "upwardinsurance.net" ' ini.ReadValue("APIConnectionSetting", "DOMAIN")
+        Dim _url As String = "https://upwardinsurance.net" 'ini.ReadValue("APIConnectionSetting", "URL")
 
-        If _domain = "upwardinsurance.net" Then
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
-        End If
-        __URL = _url
-        __CURL = _domain
+        ' ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
 
+        '__URL = _url
+        ' __CURL = _domain
+
+        '  MsgBox(__URL & " " & __CURL)
 
         ' Me.FormBorderStyle = FormBorderStyle.None
+        ' Me.TopMost = True
+        Me.StartPosition = FormStartPosition.CenterScreen
         Me.MaximizeBox = True
         Me.WindowState = FormWindowState.Maximized
         CrystalReportViewer1.ToolPanelView = False
@@ -327,7 +341,7 @@ Public Class frmMain
         Dim url As String = ""
         Dim response As String = ""
         url = __URL & "/api/get-user-details"
-
+        ' MsgBox(url)
         Dim jsonResponse As String = GetApiData(url)
         response = jsonResponse
 
@@ -425,4 +439,7 @@ Public Class frmMain
     End Sub
 
 
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
 End Class

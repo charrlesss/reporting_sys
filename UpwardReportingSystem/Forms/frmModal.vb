@@ -12,6 +12,7 @@
 
 
     Private Sub Modal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         If frmMain.ACCESS = "CLAIMS" Then
             buttonNames = {
               "Claims Report"
