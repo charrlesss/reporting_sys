@@ -151,12 +151,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Reports\DataSet1.Designer.vb">
+    <Compile Include="Reports\DataSet1.vb">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DataSet11.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Reports\DataSet1.vb">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reports\DataSet2.Designer.vb">
@@ -724,6 +724,7 @@
     <None Include="Reports\DataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>DataSet11.Designer.vb</LastGenOutput>
     </None>
     <None Include="Reports\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>

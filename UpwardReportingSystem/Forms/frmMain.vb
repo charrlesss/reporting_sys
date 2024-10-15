@@ -12,8 +12,8 @@ Public Class frmMain
 
     Private loadingForm As frmLoading  ' Declare the loading form
 
-    Dim __URL As String = "https://upwardinsurance.net"
-    Dim __CURL As String = "upwardinsurance.net"
+    Dim __URL As String = "http://localhost:4400"
+    Dim __CURL As String = "localhost"
 
     Dim ACCESS_TOKEN As String = ""
     Dim REFRESH_TOKEN As String = ""
