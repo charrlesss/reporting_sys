@@ -15,6 +15,10 @@ Public Class frmMain
     Dim __URL As String = "http://localhost:4400"
     Dim __CURL As String = "localhost"
 
+    ' Dim __URL As String = "https://upwardinsurance.net"
+    'Dim __CURL As String = "upwardinsurance.net"
+
+
     Dim ACCESS_TOKEN As String = ""
     Dim REFRESH_TOKEN As String = ""
     Public DEPARTMENT As String = ""
@@ -319,8 +323,8 @@ Public Class frmMain
         Dim ini As New IniFile(FilePath)
 
         ' Read values from the INI file
-        Dim _domain As String = "upwardinsurance.net" ' ini.ReadValue("APIConnectionSetting", "DOMAIN")
-        Dim _url As String = "https://upwardinsurance.net" 'ini.ReadValue("APIConnectionSetting", "URL")
+        '  Dim _domain As String = "localhost" ' ini.ReadValue("APIConnectionSetting", "DOMAIN")
+        ' Dim _url As String = "http://localhost:4400" 'ini.ReadValue("APIConnectionSetting", "URL")
 
         ' ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
 

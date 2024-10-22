@@ -34,14 +34,9 @@
 
     Public Sub LoadSubsidiary()
         cmbSubsi.Items.Clear()
-        Select Case cmbReport.SelectedIndex
-            Case 0 '"GL Account (Detailed)"
-                cmbSubsi.Items.Add("Sub Acct")
-                cmbSubsi.Items.Add("I.D. No.")
-                cmbSubsi.Items.Add("Insurance")
-            Case 1 '"All Accounts"
-                cmbSubsi.Items.Add("I.D. No.")
-        End Select
+        cmbSubsi.Items.Add("Sub Acct")
+        cmbSubsi.Items.Add("I.D. No.")
+        cmbSubsi.Items.Add("Insurance")
     End Sub
 
 
@@ -69,9 +64,9 @@
             txtAccount.Text = frmMain.FieldStorage("schedule_account_txtAccount")
             txtAccountName.Text = frmMain.FieldStorage("schedule_account_txtAccountName")
         Else
-            cmbReport.SelectedIndex = 0
+            cmbReport.SelectedIndex = 1
             LoadSubsidiary()
-            cmbSubsi.SelectedIndex = 0
+            cmbSubsi.SelectedIndex = 1
             cmbSort.SelectedIndex = 0
             cmbOrder.SelectedIndex = 0
         End If
