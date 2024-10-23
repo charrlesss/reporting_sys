@@ -7,6 +7,10 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "UpwardReportingSystem", "Up
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{82245E29-6DC2-4513-9F7D-82833A63B9A7}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup2", "Setup2\Setup2.vdproj", "{DCCFF04D-0A6E-431F-8420-8F7ECFFF852E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup3", "Setup3\Setup3.vdproj", "{F4B49B9D-7FA4-4D1E-A492-06DCBB0C588C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AMD64 = Debug|AMD64
@@ -49,6 +53,26 @@ Global
 		{82245E29-6DC2-4513-9F7D-82833A63B9A7}.Release|ARM64.ActiveCfg = Release
 		{82245E29-6DC2-4513-9F7D-82833A63B9A7}.Release|x64.ActiveCfg = Release
 		{82245E29-6DC2-4513-9F7D-82833A63B9A7}.Release|x86.ActiveCfg = Release
+		{DCCFF04D-0A6E-431F-8420-8F7ECFFF852E}.Debug|AMD64.ActiveCfg = Debug
+		{DCCFF04D-0A6E-431F-8420-8F7ECFFF852E}.Debug|Any CPU.ActiveCfg = Debug
+		{DCCFF04D-0A6E-431F-8420-8F7ECFFF852E}.Debug|ARM64.ActiveCfg = Debug
+		{DCCFF04D-0A6E-431F-8420-8F7ECFFF852E}.Debug|x64.ActiveCfg = Debug
+		{DCCFF04D-0A6E-431F-8420-8F7ECFFF852E}.Debug|x86.ActiveCfg = Debug
+		{DCCFF04D-0A6E-431F-8420-8F7ECFFF852E}.Release|AMD64.ActiveCfg = Release
+		{DCCFF04D-0A6E-431F-8420-8F7ECFFF852E}.Release|Any CPU.ActiveCfg = Release
+		{DCCFF04D-0A6E-431F-8420-8F7ECFFF852E}.Release|ARM64.ActiveCfg = Release
+		{DCCFF04D-0A6E-431F-8420-8F7ECFFF852E}.Release|x64.ActiveCfg = Release
+		{DCCFF04D-0A6E-431F-8420-8F7ECFFF852E}.Release|x86.ActiveCfg = Release
+		{F4B49B9D-7FA4-4D1E-A492-06DCBB0C588C}.Debug|AMD64.ActiveCfg = Debug
+		{F4B49B9D-7FA4-4D1E-A492-06DCBB0C588C}.Debug|Any CPU.ActiveCfg = Debug
+		{F4B49B9D-7FA4-4D1E-A492-06DCBB0C588C}.Debug|ARM64.ActiveCfg = Debug
+		{F4B49B9D-7FA4-4D1E-A492-06DCBB0C588C}.Debug|x64.ActiveCfg = Debug
+		{F4B49B9D-7FA4-4D1E-A492-06DCBB0C588C}.Debug|x86.ActiveCfg = Debug
+		{F4B49B9D-7FA4-4D1E-A492-06DCBB0C588C}.Release|AMD64.ActiveCfg = Release
+		{F4B49B9D-7FA4-4D1E-A492-06DCBB0C588C}.Release|Any CPU.ActiveCfg = Release
+		{F4B49B9D-7FA4-4D1E-A492-06DCBB0C588C}.Release|ARM64.ActiveCfg = Release
+		{F4B49B9D-7FA4-4D1E-A492-06DCBB0C588C}.Release|x64.ActiveCfg = Release
+		{F4B49B9D-7FA4-4D1E-A492-06DCBB0C588C}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

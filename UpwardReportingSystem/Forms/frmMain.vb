@@ -16,7 +16,7 @@ Public Class frmMain
     Dim __CURL As String = "localhost"
 
     ' Dim __URL As String = "https://upwardinsurance.net"
-    'Dim __CURL As String = "upwardinsurance.net"
+    ' Dim __CURL As String = "upwardinsurance.net"
 
 
     Dim ACCESS_TOKEN As String = ""
